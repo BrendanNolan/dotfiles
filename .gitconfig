@@ -1,0 +1,40 @@
+[user]
+	email = bnolan23@gmail.com
+	name = Brendan Nolan
+[core]
+	editor = nvim
+[alias]
+    a = add
+
+    br = branch
+    bs = branch --sort -committerdate
+    
+    cane = commit --amend --no-edit
+    
+    co = checkout
+    
+    cm = commit
+    cadn = commit --amend --date=now --no-edit
+    
+    d = diff
+    dno = diff --name-only
+
+    dc = diff --cached
+    dnoc = diff --name-only --cached 
+
+    dht = diff HEAD~
+    dnoht = diff --name-only HEAD~
+    
+    pfo = push --force origin
+    
+    pl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
+    pls = log --pretty=oneline --abbrev-commit
+    
+    rc = rebase --continue
+    rhh = reset --hard HEAD
+
+    s = status
+
+[push]
+    default = current
+
