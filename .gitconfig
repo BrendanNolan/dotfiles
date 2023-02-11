@@ -49,6 +49,7 @@
     rhh = reset --hard HEAD
 
     s = status
+    st = status
 
 [push]
     default = current
