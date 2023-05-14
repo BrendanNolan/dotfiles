@@ -168,3 +168,6 @@ fi
 if [ -f /home/brendan/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
 	source /home/brendan/.config/synth-shell/better-history.sh
 fi
+
+set -o vi
+
