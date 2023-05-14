@@ -121,6 +121,7 @@ alias create-remote-repo="gh repo create --source=. --private --push"
 alias fmt-all="cargo +nightly fmt"
 alias re="echo 'Formatting ...' && fmt-all && echo 'Checking ...' && cargo check && echo 'Clippying ...' && cargo clippy && echo 'Checking git status...' && git status"
 
+alias tka="tmux kill-server"
 alias tks="tmux kill-session"
 alias tls="tmux ls"
 alias tm="tmux"
