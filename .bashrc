@@ -131,6 +131,7 @@ alias tm="tmux"
 alias untar_command="echo tar xvzf"
 alias g="git"
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias nv="nvim ."
 alias nvimrc='nvim ~/.config/nvim'
 
 export NVM_DIR="$HOME/.nvm"
