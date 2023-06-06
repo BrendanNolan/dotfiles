@@ -146,3 +146,5 @@ eval "$(zoxide init bash)"
 
 set -o vi
 
+eval "$(starship init bash)"
+
