@@ -5,9 +5,9 @@ set -x PATH $PATH ~/scripts
 fish_add_path $HOME/.cargo/bin
 
 # Aliases
-alias ll 'ls -alF'
-alias la 'ls -A'
-alias l 'ls -CF'
+alias l 'exa'
+alias ll 'exa -l'
+alias la 'exa -la'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy ; echo "Checking git status..." ; git status'
