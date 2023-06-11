@@ -5,9 +5,10 @@ set -x PATH $PATH ~/scripts
 fish_add_path $HOME/.cargo/bin
 
 # Aliases
-alias l 'exa'
-alias ll 'exa -l'
-alias la 'exa -la'
+alias l 'exa --icons'
+alias ll 'exa -l --icons'
+alias la 'exa -la --icons'
+alias ls 'exa --icons'
 alias fnd 'fdfind'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias fmt-all 'cargo +nightly fmt'
