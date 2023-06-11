@@ -2,7 +2,7 @@ set -g fish_greeting
 
 set -x PATH $PATH ~/scripts
 
-. "$HOME/.cargo/env"
+fish_add_path $HOME/.cargo/bin
 
 # Aliases
 alias ll 'ls -alF'
@@ -24,14 +24,13 @@ alias nvimrc 'nvim ~/.config/nvim'
 # Set environment variables
 set -x NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
-[ -s "$NVM_DIR/bash_completion" ]; and source "$NVM_DIR/bash_completion"
 
 if command -sq zoxide
     zoxide init fish | source
 end
 
 # Set vi mode
-set -o vi
+fish_vi_key_bindings
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
