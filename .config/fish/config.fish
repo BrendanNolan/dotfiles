@@ -8,6 +8,7 @@ fish_add_path $HOME/.cargo/bin
 alias l 'exa'
 alias ll 'exa -l'
 alias la 'exa -la'
+alias fnd 'fdfind'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy ; echo "Checking git status..." ; git status'
