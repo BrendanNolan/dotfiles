@@ -1,7 +1,6 @@
 set -g fish_greeting
 
-set -x PATH $PATH ~/scripts
-
+fish_add_path ~/scripts
 fish_add_path $HOME/.cargo/bin
 
 # Aliases
@@ -9,7 +8,6 @@ alias l 'exa --icons'
 alias ll 'exa -l --icons'
 alias la 'exa -la --icons'
 alias ls 'exa --icons'
-alias fnd 'fdfind'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy ; echo "Checking git status..." ; git status'
