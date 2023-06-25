@@ -21,6 +21,9 @@ alias config '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias nv 'nvim .'
 alias nvimrc 'nvim ~/.config/nvim'
 
+# For the fzf.fish Plugin
+set fzf_preview_dir_cmd exa -l --icons 
+
 # Set environment variables
 set -x NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
