@@ -17,7 +17,7 @@ alias tls 'tmux ls'
 alias tm 'tmux'
 alias untar_command 'echo tar xvzf'
 alias g 'git'
-alias config '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias cf '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias nv 'nvim .'
 alias nvimrc 'nvim ~/.config/nvim'
 
