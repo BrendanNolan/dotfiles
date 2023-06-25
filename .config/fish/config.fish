@@ -20,6 +20,7 @@ alias g 'git'
 alias cf '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias nv 'nvim .'
 alias nvimrc 'nvim ~/.config/nvim'
+alias gpt 'python3 chatgpt-cli/chatgpt.py'
 
 # For the fzf.fish Plugin
 set fzf_preview_dir_cmd exa -l --icons 
