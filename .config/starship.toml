@@ -5,6 +5,10 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$c\
+$lua\
+$python\
+$rust\
 \n$character
 """
 
@@ -57,3 +61,20 @@ disabled = false
 
 [package]
 disabled = true
+
+[c]
+format = '👾'
+
+[lua]
+format = '🌙'
+
+[python]
+format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[rust]
+format = '🦀'
