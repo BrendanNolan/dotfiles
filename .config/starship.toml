@@ -1,5 +1,17 @@
 command_timeout = 1000 # miliseconds
 
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+\n$character
+"""
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
 [directory]
 read_only = " "
 truncation_length = 10
@@ -45,11 +57,3 @@ disabled = false
 
 [package]
 disabled = true
-
-[python]
-format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
-style = "bold yellow"
-pyenv_prefix = "venv "
-python_binary = ["./venv/bin/python", "python", "python3", "python2"]
-detect_extensions = ["py"]
-version_format = "v${raw}"
