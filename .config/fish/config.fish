@@ -29,6 +29,9 @@ set fzf_preview_dir_cmd exa -l --icons
 set -x NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
 
+set -x RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
+
+# Zoxide Stuff
 if command -sq zoxide
     zoxide init fish | source
 end
