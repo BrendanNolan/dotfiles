@@ -1,6 +1,6 @@
 set -g fish_greeting
 
-fish_add_path ~/scripts
+fish_add_path ~/dev/scripts
 fish_add_path $HOME/.cargo/bin
 
 # Aliases
