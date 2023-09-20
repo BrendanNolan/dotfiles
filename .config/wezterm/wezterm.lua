@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 
 return {
     check_for_updates = false,
-    enable_scroll_bar = true,
+    enable_scroll_bar = false,
     keys = {
         {
             key = 'F11',
