@@ -148,3 +148,5 @@ set -o vi
 
 eval "$(starship init bash)"
 
+
+source /Users/brendannolan/.config/broot/launcher/bash/br
