@@ -42,8 +42,10 @@
     
     pfo = push --force origin
     
-    pl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
-    pls = log --pretty=oneline --abbrev-commit
+    # Pretty Log
+    pl = log --pretty=oneline --abbrev-commit
+    # Preety Log Verbose
+    plv = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
     
     rc = rebase --continue
     rhh = reset --hard HEAD
