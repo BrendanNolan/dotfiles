@@ -31,6 +31,8 @@ set -x NVM_DIR "$HOME/.nvm"
 
 set -x RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
 
+set -x PROTOC "/opt/homebrew/bin/protoc"
+
 # Zoxide Stuff
 if command -sq zoxide
     zoxide init fish | source
