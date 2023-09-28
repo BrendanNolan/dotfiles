@@ -1,0 +1,3 @@
+modal = true # Keep this near top of file
+show_matching_characters_on_path_searches = false
+
