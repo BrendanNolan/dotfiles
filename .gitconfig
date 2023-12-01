@@ -43,10 +43,14 @@
     
     pfo = push --force origin
     
-    # Pretty Log
-    pl = log --pretty=oneline --abbrev-commit
-    # Preety Log Verbose
-    plv = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
+    # Pretty Log (Shows Only 5 Commits)
+    pl = log --pretty=oneline --abbrev-commit -n 5
+    # Preety Log Verbose (Shows Only 5 Commits)
+    plv = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit -n 5
+    # Pretty Log All (shows All Commits)
+    pla = log --pretty=oneline --abbrev-commit
+    # Preety Log All Verbose (shows All Commits)
+    plav = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
     
     rc = rebase --continue
     rhh = reset --hard HEAD
