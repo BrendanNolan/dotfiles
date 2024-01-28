@@ -1,9 +1,12 @@
 [user]
-	email = bnolan23@gmail.com
-	name = Brendan Nolan
+    email = bnolan23@gmail.com
+    name = Brendan Nolan
 [core]
-	editor = nvim
+    editor = nvim
     pager = delta
+
+[init]
+    defaultBranch = master
 
 [interactive]
     diffFilter = delta --color-only
