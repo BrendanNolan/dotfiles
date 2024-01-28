@@ -21,6 +21,8 @@ alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; 
 alias tka 'tmux kill-server'
 alias tls 'tmux ls'
 alias tm 'tmux'
+## Tmuxp
+alias fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40%)'
 ## Misc
 alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
@@ -35,6 +37,8 @@ set -x NVM_DIR "$HOME/.nvm"
 set -x RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
 
 set -x PROTOC "/opt/homebrew/bin/protoc"
+
+set -x DISABLE_AUTO_TITLE 'true'
 
 # Zoxide Stuff
 if command -sq zoxide
