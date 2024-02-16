@@ -17,6 +17,8 @@ alias cf '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 ## Copilot
 alias cpe 'gh copilot explain'
 alias cps 'gh copilot suggest'
+### ChatGPT
+alias gpt 'chat --model gpt-4'
 ## Rust
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
