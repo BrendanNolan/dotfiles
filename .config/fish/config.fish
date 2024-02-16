@@ -14,6 +14,9 @@ alias g 'git'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias vis 'gh repo view --json visibility -q .visibility'
 alias cf '/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+## Copilot
+alias cpe 'gh copilot explain'
+alias cps 'gh copilot suggest'
 ## Rust
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
