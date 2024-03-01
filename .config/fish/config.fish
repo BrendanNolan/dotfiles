@@ -22,8 +22,6 @@ alias gpt 'chat --model gpt-4'
 ## Rust
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
-alias cgca 'cargo check && cargo check --tests && cargo check --examples && cargo clippy && cargo clippy --tests && cargo clippy --examples && cargo fmt --check'
-alias cgcan 'cargo +nightly check && cargo +nightly check --tests && cargo +nightly check --examples && cargo +nightly clippy && cargo +nightly clippy --tests && cargo +nightly clippy --examples && cargo +nightly fmt --check'
 ## Tmux
 alias tka 'tmux kill-server'
 alias tls 'tmux ls'
