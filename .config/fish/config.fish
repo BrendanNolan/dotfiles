@@ -20,6 +20,7 @@ alias cps 'gh copilot suggest'
 ### ChatGPT
 alias gpt 'chat --model gpt-4'
 ## Rust
+alias cg cargo
 alias fmt-all 'cargo +nightly fmt'
 alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
 ## Tmux
