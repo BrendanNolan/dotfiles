@@ -41,6 +41,7 @@ set -x NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
 
 set -x RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
+set -x RUST_BACKTRACE 1
 
 set -x PROTOC "/opt/homebrew/bin/protoc"
 
