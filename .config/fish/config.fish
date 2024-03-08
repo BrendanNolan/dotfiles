@@ -1,5 +1,5 @@
 set -g fish_greeting
-set -U fish_color_command white # Set the color of text that I type on the command line
+set -U fish_color_command ff00ff # Set the color of text that I type on the command line
 
 fish_add_path ~/dev/scripts
 fish_add_path $HOME/.cargo/bin
