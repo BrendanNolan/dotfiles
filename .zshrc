@@ -115,6 +115,8 @@ export PROTOC="/opt/homebrew/bin/protoc"
 
 export DISABLE_AUTO_TITLE='true'
 
+export EDITOR=nvim
+
 # Enable vi mode
 bindkey -v
 # Stop the annoying lag (which is a known issue) when entering normal mode in vi mode.
