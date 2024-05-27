@@ -39,6 +39,9 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -Uz compinit && compinit
 
+# Load edit-command-line
+autoload edit-command-line; zle -N edit-command-line
+
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -123,3 +126,4 @@ bindkey -v
 # But apparently it's a sketchy thing to do: see the comment by wjv here:
 # https://www.reddit.com/r/vim/comments/60jl7h/zsh_vimode_no_delay_entering_normal_mode/
 KEYTIMEOUT=1
+bindkey -M vicmd n edit-command-line
