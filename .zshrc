@@ -115,4 +115,8 @@ export PROTOC="/opt/homebrew/bin/protoc"
 
 export DISABLE_AUTO_TITLE='true'
 
+# Enable vi mode
 bindkey -v
+# Stop annoying lag (which is a known issue) when entering normal mode in vi mode. May reenable but
+# apparently it's a sketchy thing to do.
+# KEYTIMEOUT=1
