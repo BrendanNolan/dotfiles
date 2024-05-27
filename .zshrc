@@ -45,9 +45,8 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
-bindkey -e
-bindkey '<F4>' history-search-backward
-bindkey '<F5>' history-search-forward
+bindkey '^r' history-search-backward
+#bindkey '^f' history-search-forward
 # bindkey '^[w' kill-region
 
 # History
@@ -73,3 +72,47 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa $realpath'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/brendannolan/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/brendannolan/dev/scripts:/Users/brendannolan/.cargo/bin"
+
+path+=('~/dev/scripts')
+path+=("$HOME/.cargo/bin")
+
+# Aliases
+## Ls
+alias l='exa --icons'
+alias ll='exa -l --icons'
+alias la='exa -la --icons'
+alias ls='exa --icons'
+## Git
+alias g='git'
+alias create-remote-repo='gh repo create --source=. --private --push'
+alias vis='gh repo view --json visibility -q .visibility'
+alias cf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+## Copilot
+alias cpe='gh copilot explain'
+alias cps='gh copilot suggest'
+### ChatGPT
+alias gpt='chat --model gpt-4'
+## Rust
+alias cg=cargo
+alias fmt-all='cargo +nightly fmt'
+alias re='echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
+## Tmux
+alias tka='tmux kill-server'
+alias tls='tmux ls'
+alias tm='tmux'
+## Tmuxp
+alias fux='tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40%)'
+## Misc
+alias untar_command='echo tar xvzf'
+alias nv='nvim .'
+
+export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"
+export RUST_BACKTRACE=1
+
+export PROTOC="/opt/homebrew/bin/protoc"
+
+export DISABLE_AUTO_TITLE='true'
+
+bindkey -v
