@@ -117,6 +117,7 @@ export DISABLE_AUTO_TITLE='true'
 
 # Enable vi mode
 bindkey -v
-# Stop annoying lag (which is a known issue) when entering normal mode in vi mode. May reenable but
-# apparently it's a sketchy thing to do.
-# KEYTIMEOUT=1
+# Stop the annoying lag (which is a known issue) when entering normal mode in vi mode.
+# But apparently it's a sketchy thing to do: see the comment by wjv here:
+# https://www.reddit.com/r/vim/comments/60jl7h/zsh_vimode_no_delay_entering_normal_mode/
+KEYTIMEOUT=1
