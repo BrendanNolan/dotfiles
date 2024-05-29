@@ -1,45 +1,17 @@
 command_timeout = 1000 # miliseconds
 
-# format = """
-# [](#37393D)\
-# $os\
-# $username\
-# [](bg:#DA627D fg:#37393D)\
-# $directory\
-# [](fg:#DA627D bg:#FCA17D)\
-# $git_branch\
-# $git_status\
-# [](fg:#FCA17D bg:#86BBD8)\
-# $c\
-# $elixir\
-# $elm\
-# $golang\
-# $gradle\
-# $haskell\
-# $java\
-# $julia\
-# $nodejs\
-# $nim\
-# $rust\
-# $scala\
-# [](fg:#86BBD8 bg:#06969A)\
-# $docker_context\
-# [](fg:#06969A bg:#33658A)\
-# $time\
-# [ ](fg:#33658A)\
-# """
-
 format = """
-[](#37393D)\
+[](#DA627D)\
 $directory\
-[](fg:#37393D)\
+[](fg:#DA627D bg:#FCA17D)\
 $git_branch\
-$git_state\
 $git_status\
+[](fg:#FCA17D bg:#86BBD8)\
 $c\
 $lua\
 $python\
 $rust\
+[](fg:#86BBD8)\
 \n$character
 """
 
@@ -48,11 +20,11 @@ success_symbol = '[❯](bold green)'
 error_symbol = '[❯](bold red)'
 
 [directory]
-format = '[ ](bold fg:#af8700 bg:#37393D)[$path]($style)[$read_only]($read_only_style)'
-read_only = " "
-truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
-style = "bold fg:#0099FF bg:#37393D"
+style = "bg:#DA627D bold fg:#000000"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = true
 
 [cmd_duration]
 min_time = 4
@@ -61,8 +33,9 @@ disabled = true
 style = "bold italic red"
 
 [git_branch]
-format = ' [$symbol$branch(:$remote_branch)]($style) '
 symbol = " "
+style = "bg:#FCA17D bold fg:#000000"
+format = '[ $symbol $branch]($style)'
 
 [git_status]
 conflicted = "⚔️ "
@@ -75,11 +48,11 @@ modified = "📝×${count} "
 staged = "✉️×${count} "
 renamed = "[➜](bright-yellow)×${count} "
 deleted = "🗑️×${count} "
-style = "fg: bright-white bg: #3A3B54"
-format = "$all_status$ahead_behind"
+style = "bg:#FCA17D bold fg:#000000"
+format = '[$all_status$ahead_behind]($style)'
 
 [git_state]
-style =	"fg: bold red bg: #3A3B54"
+style = "bg:#FCA17D"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"	
@@ -96,18 +69,22 @@ disabled = false
 disabled = true
 
 [c]
-format = '👾'
+format = ' '
+style = "bg:#86BBD8 bold fg:#000000"
 
 [lua]
 format = '🌙'
+style = "bg:#86BBD8 bold fg:#000000"
 
 [python]
 format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
-style = "bold yellow"
+style = "bg:#86BBD8 bold fg:#000000"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
 version_format = "v${raw}"
 
 [rust]
-format = '🦀'
+symbol = ""
+style = "bg:#86BBD8 bold fg:#000000"
+format = '[ $symbol ]($style)'
