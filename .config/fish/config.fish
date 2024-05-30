@@ -10,6 +10,8 @@ alias l 'exa --icons'
 alias ll 'exa -l --icons'
 alias la 'exa -la --icons'
 alias ls 'exa --icons'
+## Cd stuff
+alias cdf 'cd (fd -t d -d 8 | fzf)'
 ## Git
 alias g 'git'
 alias create-remote-repo 'gh repo create --source=. --private --push'
