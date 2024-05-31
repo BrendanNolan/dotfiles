@@ -22,7 +22,7 @@ error_symbol = '[❯](bold red)'
 
 [directory]
 style = "bg:#DA627D bold fg:#000000"
-format = "[ $path ]($style)"
+format = "[  $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
@@ -36,7 +36,7 @@ style = "bold italic red"
 [git_branch]
 symbol = " "
 style = "bg:#FCA17D bold fg:#000000"
-format = '[ $symbol $branch]($style)'
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
 conflicted = "⚔️ "
