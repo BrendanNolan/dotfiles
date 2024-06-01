@@ -74,6 +74,13 @@ symbol = ' '
 style = "bg:#86BBD8 bold fg:#000000"
 format = '[ $symbol ]($style)'
 
+[custom.cpp]
+symbol = "󰙲 "
+style = "bg:#86BBD8 bold fg:#000000"
+format = '[ $symbol ]($style)'
+detect_extensions = ['cpp', 'cc', 'hpp']
+
+
 [lua]
 symbol = '🌙'
 style = "bg:#86BBD8 bold fg:#000000"
