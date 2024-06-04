@@ -131,3 +131,5 @@ bindkey -M vicmd n edit-command-line
 
 powerlevel10k_plugin_unload
 eval "$(starship init zsh)"
+
+source ~/.config/broot/launcher/bash/br
