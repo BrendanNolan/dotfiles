@@ -78,8 +78,10 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/brendannolan/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/brendannolan/dev/scripts:/Users/brendannolan/.cargo/bin"
 
-path+=('~/dev/scripts')
+path+=("$HOME/dev/scripts")
 path+=("$HOME/.cargo/bin")
+typeset -U path
+export PATH
 
 # Aliases
 ## Ls
