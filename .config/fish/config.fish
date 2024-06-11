@@ -7,10 +7,10 @@ fish_add_path $HOME/.cargo/bin
 
 # Aliases
 ## Ls
-alias l 'exa --icons'
-alias ll 'exa -l --icons'
-alias la 'exa -la --icons'
-alias ls 'exa --icons'
+alias l 'eza --icons'
+alias ll 'eza -l --icons'
+alias la 'eza -la --icons'
+alias ls 'eza --icons'
 ## Cd stuff
 alias cdf 'cd (fd -t d -d 8 | fzf)'
 ## Git
@@ -37,7 +37,7 @@ alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
 
 # For the fzf.fish Plugin
-set fzf_preview_dir_cmd exa -l --icons 
+set fzf_preview_dir_cmd eza -l --icons
 
 # Set environment variables
 set -x NVM_DIR "$HOME/.nvm"

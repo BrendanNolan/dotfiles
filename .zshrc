@@ -69,8 +69,8 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'exa $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza $realpath'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -85,10 +85,10 @@ export PATH
 
 # Aliases
 ## Ls
-alias l='exa --icons'
-alias ll='exa -l --icons'
-alias la='exa -la --icons'
-alias ls='exa --icons'
+alias l='eza --icons'
+alias ll='eza -l --icons'
+alias la='eza -la --icons'
+alias ls='eza --icons'
 ## Git
 alias g='git'
 alias create-remote-repo='gh repo create --source=. --private --push'
