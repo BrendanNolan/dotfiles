@@ -1,5 +1,6 @@
 set -g fish_greeting
 set -U fish_color_command ff00ff # Set the color of text that I type on the command line
+set -Ux fifc_editor nvim
 
 fish_add_path ~/dev/scripts
 fish_add_path $HOME/.cargo/bin
@@ -62,3 +63,6 @@ if status is-interactive
 end
 
 starship init fish | source
+
+# Set up fzf key bindings
+fzf --fish | source
