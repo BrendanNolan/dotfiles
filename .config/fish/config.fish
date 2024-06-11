@@ -52,7 +52,7 @@ set -x DISABLE_AUTO_TITLE 'true'
 
 # Zoxide Stuff
 if command -sq zoxide
-    zoxide init fish | source
+    zoxide init --cmd cd fish | source
 end
 
 # Set vi mode
