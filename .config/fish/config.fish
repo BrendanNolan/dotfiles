@@ -1,5 +1,5 @@
 set -g fish_greeting
-set -U fish_color_command ff00ff # Set the color of text that I type on the command line
+set -U fish_color_command ebde34 # Set the color of text that I type on the command line
 set -Ux fifc_editor nvim
 
 fish_add_path ~/dev/scripts
