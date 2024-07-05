@@ -135,3 +135,13 @@ powerlevel10k_plugin_unload
 eval "$(starship init zsh)"
 
 source ~/.config/broot/launcher/bash/br
+
+# Launch yazi such that you change dir on exit
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
