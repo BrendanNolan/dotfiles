@@ -38,7 +38,9 @@ alias nv 'nvim .'
 
 # Set environment variables
 set -gx NVM_DIR "$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
+if test -e $NVM_DIR
+    source "$NVM_DIR/nvm.fish"
+end
 
 set -gx RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
 set -gx RUST_BACKTRACE 1
