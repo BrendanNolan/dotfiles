@@ -1,6 +1,6 @@
-set -g fish_greeting
-set -U fish_color_command ebde34 # Set the color of text that I type on the command line
-set -Ux fifc_editor nvim
+set -gx fish_greeting
+set -gx fish_color_command ebde34 # Set the color of text that I type on the command line
+set -gx fifc_editor nvim
 
 fish_add_path ~/dev/scripts
 fish_add_path $HOME/.cargo/bin
@@ -37,15 +37,15 @@ alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
 
 # Set environment variables
-set -x NVM_DIR "$HOME/.nvm"
+set -gx NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
 
-set -x RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
-set -x RUST_BACKTRACE 1
+set -gx RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
+set -gx RUST_BACKTRACE 1
 
-set -x PROTOC "/opt/homebrew/bin/protoc"
+set -gx PROTOC "/opt/homebrew/bin/protoc"
 
-set -x DISABLE_AUTO_TITLE 'true'
+set -gx DISABLE_AUTO_TITLE 'true'
 
 # Zoxide Stuff
 if command -sq zoxide
