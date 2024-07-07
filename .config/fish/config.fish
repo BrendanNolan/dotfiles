@@ -36,9 +36,6 @@ alias fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40
 alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
 
-# For the fzf.fish Plugin
-set fzf_preview_dir_cmd eza -l --icons
-
 # Set environment variables
 set -x NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.fish" ]; and source "$NVM_DIR/nvm.fish"
