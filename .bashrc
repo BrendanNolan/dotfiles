@@ -150,3 +150,8 @@ eval "$(starship init bash)"
 
 
 source /Users/brendannolan/.config/broot/launcher/bash/br
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

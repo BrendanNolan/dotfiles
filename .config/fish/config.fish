@@ -49,19 +49,21 @@ set -gx PROTOC "/opt/homebrew/bin/protoc"
 
 set -gx DISABLE_AUTO_TITLE 'true'
 
-# Zoxide Stuff
-if command -sq zoxide
-    zoxide init --cmd cd fish | source
-end
-
-# Set vi mode
-fish_vi_key_bindings
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Set vi mode
+    fish_vi_key_bindings
+
+    if command -sq zoxide
+        zoxide init --cmd cd fish | source
+    end
+
+    # Pay attention to the order of the sourcing of the atuin and fzf scripts. Sourcing the fzf
+    # script second means that Ctrl+R gives the normal fzf history search, rather than the atuin
+    # TUI; to get the atuin TUI, just press the up arrow.
+    atuin init fish | source
+    fzf --fish | source
+
+    starship init fish | source
 end
 
-starship init fish | source
-
-# Set up fzf key bindings
-fzf --fish | source

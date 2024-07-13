@@ -145,3 +145,7 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
