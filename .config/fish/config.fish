@@ -58,14 +58,8 @@ if status is-interactive
         zoxide init --cmd cd fish | source
     end
 
-    # Pay attention to the order of the sourcing of the atuin and fzf scripts. Sourcing the fzf
-    # script second means that Ctrl+R gives the normal fzf history search, rather than the atuin
-    # TUI; to get the atuin TUI, just press the up arrow.
-
-    # Disabling atuin keybindings for now because I don't like the way that doesn't let you
-    # configure launch - it forces you to launch with Ctrl+R or up arrow.
-    # atuin init fish | source 
     fzf --fish | source
+    atuin init fish --disable-ctrl-r | source # ctrl-r is for fzf fish history, and I want to keep it that way
 
     starship init fish | source
 end
