@@ -55,6 +55,9 @@ if status is-interactive
     # Set vi mode
     fish_vi_key_bindings
 
+    bind --user -M insert \ck up-or-search
+    bind --user -M insert \cj down-or-search
+
     if command -sq zoxide
         zoxide init --cmd cd fish | source
     end
