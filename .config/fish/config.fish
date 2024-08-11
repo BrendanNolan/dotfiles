@@ -35,6 +35,7 @@ alias fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40
 ## Misc
 alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
+alias coffee_cow "cowsay \"It's coffee time\""
 
 # Set environment variables
 set -gx NVM_DIR "$HOME/.nvm"
