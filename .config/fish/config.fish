@@ -2,6 +2,13 @@ set -gx fish_greeting
 set -gx fish_color_command ebde34 # Set the color of text that I type on the command line
 set -gx fifc_editor nvim
 
+# PATH
+switch (uname)
+    case Darwin
+        fish_add_path /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    case Linux
+    case '*'
+end
 fish_add_path ~/dev/scripts
 fish_add_path $HOME/.cargo/bin
 
