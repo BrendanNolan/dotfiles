@@ -14,35 +14,35 @@ fish_add_path $HOME/.cargo/bin
 
 # Aliases
 ## Ls
-alias l 'eza --icons'
-alias ll 'eza -l --icons'
-alias la 'eza -la --icons'
-alias ls 'eza --icons'
+abbr l 'eza --icons'
+abbr ll 'eza -l --icons'
+abbr la 'eza -la --icons'
+abbr ls 'eza --icons'
 ## Cd stuff
-alias cdf 'cd (fd -t d -d 8 | fzf)'
+abbr cdf 'cd (fd -t d -d 8 | fzf)'
 ## Git
-alias g 'git'
-alias create-remote-repo 'gh repo create --source=. --private --push'
-alias vis 'gh repo view --json visibility -q .visibility'
+abbr g 'git'
+abbr create-remote-repo 'gh repo create --source=. --private --push'
+abbr vis 'gh repo view --json visibility -q .visibility'
 ## Copilot
-alias cpe 'gh copilot explain'
-alias cps 'gh copilot suggest'
+abbr cpe 'gh copilot explain'
+abbr cps 'gh copilot suggest'
 ### ChatGPT
-alias gpt 'chat --model gpt-4'
+abbr gpt 'chat --model gpt-4'
 ## Rust
-alias cg cargo
-alias fmt-all 'cargo +nightly fmt'
-alias re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
+abbr cg cargo
+abbr fmt-all 'cargo +nightly fmt'
+abbr re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
 ## Tmux
-alias tka 'tmux kill-server'
-alias tls 'tmux ls'
-alias tm 'tmux'
+abbr tka 'tmux kill-server'
+abbr tls 'tmux ls'
+abbr tm 'tmux'
 ## Tmuxp
-alias fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40%)'
+abbr fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40%)'
 ## Misc
-alias untar_command 'echo tar xvzf'
-alias nv 'nvim .'
-alias coffee_cow "cowsay \"It's coffee time\""
+abbr untar_command 'echo tar xvzf'
+abbr nv 'nvim .'
+abbr coffee_cow "cowsay \"It's coffee time\""
 
 # Set environment variables
 set -gx NVM_DIR "$HOME/.nvm"
