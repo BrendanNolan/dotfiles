@@ -44,6 +44,8 @@ alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
 alias coffee_cow "cowsay \"It's coffee time\""
 
+alias talon_log "tail -50 ~/.talon/talon.log"
+
 # Set environment variables
 set -gx NVM_DIR "$HOME/.nvm"
 if test -e $NVM_DIR
