@@ -75,12 +75,5 @@ if status is-interactive
     atuin init fish --disable-ctrl-r | source # ctrl-r is for fzf fish history, and I want to keep it that way
 
     starship init fish | source
-
-    function mkcd
-      mkdir -p $argv[1]
-      if test -d "$argv[1]"
-        cd $argv[1]
-      end
-    end
 end
 
