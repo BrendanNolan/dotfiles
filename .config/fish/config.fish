@@ -59,7 +59,6 @@ set -gx PROTOC "/opt/homebrew/bin/protoc"
 
 set -gx DISABLE_AUTO_TITLE 'true'
 
-
 if status is-interactive
     # Set vi mode
     fish_vi_key_bindings
