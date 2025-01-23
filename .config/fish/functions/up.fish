@@ -1,5 +1,5 @@
 function up
-    if not string match -q '^[0-9]+$' -- $argv[1]
+    if not string match -qr '^[0-9]+$' -- $argv[1]
         echo "Incorrect usage. The correct usage is: up <nonnegative_integer>"
         return 1
     end
