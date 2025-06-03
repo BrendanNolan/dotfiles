@@ -68,3 +68,6 @@
 
 [rerere]
     enabled = true
+
+[rebase]
+    missingcomitscheck = warn
