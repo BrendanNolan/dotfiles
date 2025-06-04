@@ -70,4 +70,4 @@
     enabled = true
 
 [rebase]
-    missingcomitscheck = warn
+    missingcommitscheck = warn
