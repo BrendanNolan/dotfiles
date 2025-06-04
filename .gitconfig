@@ -17,7 +17,7 @@
     side-by-side = true
 
 [merge]
-    conflictstyle = diff3
+    conflictStyle = diff3
 
 [diff]
     colorMoved = default
@@ -62,12 +62,12 @@
     st = status
 
 [push]
-    autosetupremote = true
+    autoSetupRemote = true
     default = current
-    followtags = true
+    followTags = true
 
 [rerere]
     enabled = true
 
 [rebase]
-    missingcommitscheck = warn
+    missingCommitsCheck = warn
