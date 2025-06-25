@@ -22,6 +22,7 @@ alias ls 'eza --icons'
 alias cdf 'cd (fd -t d -d 8 | fzf)'
 ## Git
 alias g 'git'
+alias ge 'git add . && git status && sleep 1 && git diff --cached'
 alias create-remote-repo 'gh repo create --source=. --private --push'
 alias vis 'gh repo view --json visibility -q .visibility'
 ## Copilot
