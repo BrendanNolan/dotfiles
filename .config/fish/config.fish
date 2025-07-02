@@ -72,7 +72,7 @@ if status is-interactive
     end
 
     fzf --fish | source
-    atuin init fish --disable-ctrl-r | source # ctrl-r is for fzf fish history, and I want to keep it that way
+    # atuin init fish --disable-ctrl-r | source # ctrl-r is for fzf fish history, and I want to keep it that way
 
     starship init fish | source
 end
