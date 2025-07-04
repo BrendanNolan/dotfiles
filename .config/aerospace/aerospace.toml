@@ -6,10 +6,23 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+    'exec-and-forget open -a wezterm',
+    'exec-and-forget open -a "Google Chrome"',
+    'exec-and-forget open -a Obsidian',
+    'exec-and-forget open -a "Adobe Acrobat Reader"'
+]
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace 0"
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace 1"
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
