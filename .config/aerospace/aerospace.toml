@@ -120,6 +120,9 @@ automatically-unhide-macos-hidden-apps = false
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
 
+    alt-ctrl-cmd-shift-f = 'fullscreen'
+    alt-ctrl-cmd-shift-r = 'reload-config'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-ctrl-cmd-shift-0 = 'workspace 1'
     alt-ctrl-cmd-shift-1 = 'workspace 2'
