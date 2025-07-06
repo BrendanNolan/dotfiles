@@ -6,23 +6,16 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
+# Opening wezterm last because I want to be in wezterm when startup completes
 after-startup-command = [
-    'exec-and-forget open -a wezterm',
-    'exec-and-forget open -a "Google Chrome"',
-    'exec-and-forget open -a Obsidian',
-    'exec-and-forget open -a "Adobe Acrobat Reader"'
+    'exec-and-forget pgrep -x AdobeReader || open -a "Adobe Acrobat Reader"',
+    'exec-and-forget pgrep -x Obsidian || open -a Obsidian',
+    'exec-and-forget pgrep -x "Google Chrome" || open -a "Google Chrome"',
+    'exec-and-forget pgrep -x wezterm-gui || open -a wezterm'
 ]
 
 # Start AeroSpace at login
 start-at-login = true
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = "move-node-to-workspace 0"
-
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = "move-node-to-workspace 1"
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -140,16 +133,16 @@ automatically-unhide-macos-hidden-apps = false
     alt-ctrl-cmd-shift-9 = 'workspace A'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-    ctrl-cmd-shift-0 = 'workspace 1'
-    ctrl-cmd-shift-1 = 'workspace 2'
-    ctrl-cmd-shift-2 = 'workspace 3'
-    ctrl-cmd-shift-3 = 'workspace 4'
-    ctrl-cmd-shift-4 = 'workspace 5'
-    ctrl-cmd-shift-5 = 'workspace 6'
-    ctrl-cmd-shift-6 = 'workspace 7'
-    ctrl-cmd-shift-7 = 'workspace 8'
-    ctrl-cmd-shift-8 = 'workspace 9'
-    ctrl-cmd-shift-9 = 'workspace A'
+    ctrl-cmd-shift-0 = 'move-node-to-workspace 1'
+    ctrl-cmd-shift-1 = 'move-node-to-workspace 2'
+    ctrl-cmd-shift-2 = 'move-node-to-workspace 3'
+    ctrl-cmd-shift-3 = 'move-node-to-workspace 4'
+    ctrl-cmd-shift-4 = 'move-node-to-workspace 5'
+    ctrl-cmd-shift-5 = 'move-node-to-workspace 6'
+    ctrl-cmd-shift-6 = 'move-node-to-workspace 7'
+    ctrl-cmd-shift-7 = 'move-node-to-workspace 8'
+    ctrl-cmd-shift-8 = 'move-node-to-workspace 9'
+    ctrl-cmd-shift-9 = 'move-node-to-workspace A'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -158,6 +151,22 @@ automatically-unhide-macos-hidden-apps = false
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = 'com.adobe.Reader'
+run = "move-node-to-workspace 4"
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
