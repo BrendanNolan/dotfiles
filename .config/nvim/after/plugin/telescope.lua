@@ -26,6 +26,7 @@ vim.keymap.set('n', '<leader>tb', function() builtin.buffers({sort_mru=true}) en
 vim.keymap.set('n', '<leader>tj', builtin.jumplist, {desc = "Telescope show jumplist"})
 
 local file_browser_actions = require("telescope").extensions.file_browser.actions
+local lga_actions = require("telescope-live-grep-args.actions")
 require('telescope').setup{
   defaults = require("telescope.themes").get_dropdown(
     {
@@ -49,11 +50,18 @@ require('telescope').setup{
         },
       },
     },
+    live_grep_args = {
+      mappings = {
+        i = {
+          ["<C-h>"] = lga_actions.quote_prompt({ postfix = " --hidden --glob '!.git/**'"})
+        },
+      },
+    },
   },
 }
 
+require('telescope').load_extension('live_grep_args')
 require('telescope').load_extension('fzf')
-
 require('telescope').load_extension('file_browser')
 local file_browser_theme =
   require('telescope.themes').get_ivy({ path = "%:p:h", select_buffer = true, initial_mode = "normal" })
