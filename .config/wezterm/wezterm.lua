@@ -4,7 +4,6 @@ local act = wezterm.action
 return {
     check_for_updates = false,
     enable_scroll_bar = false,
-    window_decorations = "NONE",
     keys = {
         {
             key = 'F11',
