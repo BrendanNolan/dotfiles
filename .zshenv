@@ -12,6 +12,7 @@ export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"
 export RUST_BACKTRACE=1
 export PROTOC=/opt/homebrew/bin/protoc
 export DISABLE_AUTO_TITLE=true
+export EDITOR=nvim
 
 # Aliases
 ## Ls
