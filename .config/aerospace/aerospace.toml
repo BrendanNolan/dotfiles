@@ -2,7 +2,7 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
-    'exec-and-forget pgrep -x AdobeReader || open -a "Adobe Acrobat Reader"',
+    # 'exec-and-forget pgrep -x zathura || zathura', no need to open this upfront if there is nothing to view
     'exec-and-forget pgrep -x Obsidian || open -a Obsidian',
     'exec-and-forget pgrep -x "Google Chrome" || open -a "Google Chrome"',
     'exec-and-forget pgrep -x wezterm-gui || open -a wezterm' # Opening wezterm last because I want to be in wezterm when startup completes
@@ -54,7 +54,7 @@ if.app-id = 'md.obsidian'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = 'com.adobe.Reader'
+if.app-id = 'com.pwmt.zathura'
 run = "move-node-to-workspace 4"
 
 # 'service' binding mode declaration.
