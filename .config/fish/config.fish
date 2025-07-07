@@ -2,16 +2,6 @@ set -gx fish_greeting
 set -gx fish_color_command ebde34 # Set the color of text that I type on the command line
 set -gx fifc_editor nvim
 
-# PATH
-switch (uname)
-    case Darwin
-        fish_add_path /opt/homebrew/opt/gnu-sed/libexec/gnubin
-    case Linux
-    case '*'
-end
-fish_add_path ~/dev/scripts
-fish_add_path $HOME/.cargo/bin
-
 # Aliases
 ## Ls
 alias l 'eza --icons'
@@ -43,22 +33,6 @@ alias fux 'tmuxp load (tmuxp ls | fzf --layout=reverse --info=inline --height=40
 ## Misc
 alias untar_command 'echo tar xvzf'
 alias nv 'nvim .'
-alias coffee_cow "cowsay \"It's coffee time\""
-
-alias talon_log "tail -50 ~/.talon/talon.log"
-
-# Set environment variables
-set -gx NVM_DIR "$HOME/.nvm"
-if test -e $NVM_DIR
-    source "$NVM_DIR/nvm.fish"
-end
-
-set -gx RUSTC_WRAPPER "$HOME/.cargo/bin/sccache"
-set -gx RUST_BACKTRACE 1
-
-set -gx PROTOC "/opt/homebrew/bin/protoc"
-
-set -gx DISABLE_AUTO_TITLE 'true'
 
 if status is-interactive
     # Set vi mode
