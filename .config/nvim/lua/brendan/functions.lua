@@ -26,7 +26,7 @@ end
 
 local get_codelldb_extension_path = function()
     local codelldb = require('mason-registry').get_package('codelldb')
-    return codelldb:get_install_path() .. "/extension/"
+    return vim.fn.expand("$MASON/packages/codelldb") .. "/extension/"
 end
 
 function GetCodelldbPath()
