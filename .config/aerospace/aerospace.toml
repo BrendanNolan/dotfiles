@@ -1,4 +1,7 @@
 after-startup-command = [
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
     'exec-and-forget pgrep -x AdobeReader || open -a "Adobe Acrobat Reader"',
     'exec-and-forget pgrep -x Obsidian || open -a Obsidian',
     'exec-and-forget pgrep -x "Google Chrome" || open -a "Google Chrome"',
@@ -94,3 +97,12 @@ run = "move-node-to-workspace 4"
     # the current orientation. So here, this just means toggling horizontal and vertical layouts.
     alt-comma = 'layout horizontal vertical'
     alt-enter = 'workspace-back-and-forth'
+
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+[gaps]
+    inner.horizontal = 10
+    inner.vertical =   10
+    outer.left =       0
+    outer.bottom =     0
+    outer.top =        0
+    outer.right =      0
