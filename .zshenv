@@ -9,6 +9,9 @@ case "$(uname)" in
 esac
 export PATH
 
+# Config
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # OTHER ENV VARS
 export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"
 export RUST_BACKTRACE=1
