@@ -62,7 +62,8 @@ run = "move-node-to-workspace 4"
 [mode.service.binding]
     backspace = 'mode main'
     x = ['exec-and-forget killapps']
-    r = ['reload-config', 'mode main']
+    c = ['reload-config', 'mode main']
+    r = ['exec-and-forget repatriate_window', 'mode_main']
     f = ['flatten-workspace-tree', 'mode main'] # reset layout
 
     h = ['focus left', 'mode main']
@@ -80,6 +81,7 @@ run = "move-node-to-workspace 4"
     ctrl-k = ['join-with up', 'mode main']
     ctrl-l = ['join-with right', 'mode main']
 
+    t = ['move-node-to-workspace --focus-follows-window 1', 'mode main']
     0 = ['move-node-to-workspace --focus-follows-window 1', 'mode main']
     1 = ['move-node-to-workspace --focus-follows-window 2', 'mode main']
     2 = ['move-node-to-workspace --focus-follows-window 3', 'mode main']
