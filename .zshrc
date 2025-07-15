@@ -2,6 +2,7 @@
 
 # Vi mode
 bindkey -v
+KEYTIMEOUT=1  # Workaround for very slow entry into normal mode on command line
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases.zsh"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/functions.zsh"
