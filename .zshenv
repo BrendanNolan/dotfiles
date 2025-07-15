@@ -3,10 +3,11 @@
 ## remove duplicates automatically
 typeset -U path
 path+=(/usr/bin $HOME/dev/scripts $HOME/.cargo/bin /usr/local/bin /bin /usr/sbin /sbin )
-case "$(uname)" in
-    Darwin) path=(/opt/homebrew/bin /opt/homebrew/opt/gnu-sed/libexec/gnubin $path) ;;
-    *) ;;
-esac
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # Sets some environment variables to make sure that brew works
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  path+=(/opt/homebrew/opt/gnu-sed/libexec/gnubin)
+fi
 export PATH
 
 # Config
