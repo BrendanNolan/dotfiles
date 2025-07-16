@@ -4,11 +4,16 @@
 bindkey -v
 KEYTIMEOUT=1  # Workaround for very slow entry into normal mode on command line
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases.zsh"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/functions.zsh"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins.zsh"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/completion_styling.zsh"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/shell_integrations.zsh"
+# As the name of this function suggests, it should not be used elsewhere
+source_conf_for_zshrc() {
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/${1}.zsh"
+}
+
+source_conf_for_zshrc "aliases"
+source_conf_for_zshrc "functions"
+source_conf_for_zshrc "plugins"
+source_conf_for_zshrc "completion_styling"
+source_conf_for_zshrc "shell_integrations"
 
 # Load completions
 autoload -Uz compinit && compinit
