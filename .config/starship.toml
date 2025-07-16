@@ -1,7 +1,9 @@
 command_timeout = 1000 # miliseconds
 
 format = """
-[](#DA627D)\
+[](#D3D3D3)\
+$status\
+[](fg:#D3D3D3 bg:#DA627D)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
 $git_branch\
@@ -16,13 +18,19 @@ $rust\
 \n$character
 """
 
+[status]
+style = 'bg:#D3D3D3 fg:#000000'
+success_symbol = 'y' # Never showing this but if it is not set, then we will show no exit code in the success case
+format = '[$status]($style)'
+disabled = false
+
 [character]
 success_symbol = '[❯](bold green)'
 error_symbol = '[❯](bold red)'
 
 [directory]
 style = "bg:#DA627D bold fg:#000000"
-format = "[  $path ]($style)"
+format = "[   $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 truncate_to_repo = true
