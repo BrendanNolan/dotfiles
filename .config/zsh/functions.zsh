@@ -30,3 +30,7 @@ function yy() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+blast_zinit() {
+	rm -rf "$ZINIT_ALL"
+}
