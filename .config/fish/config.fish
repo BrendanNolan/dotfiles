@@ -10,13 +10,6 @@ if status is-interactive
     bind --user -M insert \ck up-or-search
     bind --user -M insert \cj down-or-search
 
-    if command -sq zoxide
-        zoxide init --cmd cd fish | source
-    end
-
-    fzf --fish | source
-    # atuin init fish --disable-ctrl-r | source # ctrl-r is for fzf fish history, and I want to keep it that way
-
-    starship init fish | source
+    source $__fish_config_dir/shell_integrations.fish
 end
 
