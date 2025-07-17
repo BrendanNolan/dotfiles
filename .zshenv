@@ -13,14 +13,13 @@ export RUST_BACKTRACE=1
 export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
 
+source_from_conf() {
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/${1}.zsh"
+}
+
 # macOS Stuff
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # Sets some environment variables to make sure that brew works
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  path+=(/opt/homebrew/opt/gnu-sed/libexec/gnubin)
-fi
 if [[ "$(uname)" = Darwin ]]; then
-    export PROTOC=/opt/homebrew/bin/protoc
+    source_from_conf "macos_env"
 fi
 
 # Export PATH
