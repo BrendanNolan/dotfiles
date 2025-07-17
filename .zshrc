@@ -15,4 +15,5 @@ source_from_conf "shell_integrations"
 autoload -Uz compinit && compinit
 zinit cdreplay -q # Reloads plugins without resourcing .zshrc
 
-source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/history_opts.zsh"
+# source_from_conf is defined in .zshenv
+source_from_conf "history_opts"
