@@ -2,7 +2,7 @@
 
 # Vi mode
 bindkey -v
-KEYTIMEOUT=1  # Workaround for very slow entry into normal mode on command line
+KEYTIMEOUT=1 # Workaround for very slow entry into normal mode on command line
 
 # source_from_conf is defined in .zshenv
 source_from_conf "aliases"
@@ -13,6 +13,6 @@ source_from_conf "shell_integrations"
 
 # Load completions
 autoload -Uz compinit && compinit
-zinit cdreplay -q  # Reloads plugins without resourcing .zshrc
+zinit cdreplay -q # Reloads plugins without resourcing .zshrc
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/history_opts.zsh"

@@ -14,12 +14,12 @@ export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
 
 source_from_conf() {
-    source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/${1}.zsh"
+	source "${XDG_CONFIG_HOME:-$HOME/.config}/zsh/${1}.zsh"
 }
 
 # macOS Stuff
 if [[ "$(uname)" = Darwin ]]; then
-    source_from_conf "macos_env"
+	source_from_conf "macos_env"
 fi
 
 # Export PATH
