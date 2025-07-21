@@ -6,6 +6,7 @@ path+=(/usr/bin $HOME/dev/scripts $HOME/.cargo/bin /usr/local/bin /bin /usr/sbin
 
 # Config
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # OTHER ENV VARS
 export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"

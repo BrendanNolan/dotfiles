@@ -31,6 +31,6 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-blast_zinit() {
-	rm -rf "$ZINIT_ALL"
+blast_plugins() {
+	rm -rf "$ZSH_PLUGIN_HOME"
 }
