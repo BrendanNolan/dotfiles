@@ -1,25 +1,25 @@
 command_timeout = 1000 # miliseconds
 
 format = """
-[](#D3D3D3)\
+[](#2A4D4F)\
 $status\
-[](fg:#D3D3D3 bg:#DA627D)\
+[](fg:#2A4D4F bg:#3B7C78)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:#3B7C78 bg:#4CAFA7)\
 $git_branch\
 $git_status\
 $git_state\
-[](fg:#FCA17D bg:#86BBD8)\
+[](fg:#4CAFA7 bg:#A0DAD5)\
 $c\
 $lua\
 $python\
 $rust\
-[](fg:#86BBD8)\
+[](fg:#A0DAD5)\
 \n$character
 """
 
 [status]
-style = 'bg:#D3D3D3 fg:#000000'
+style = 'bg:#2A4D4F fg:#FFFFFF'
 success_symbol = 'y' # Never showing this but if it is not set, then we will show no exit code in the success case
 format = '[$status]($style)'
 disabled = false
@@ -29,7 +29,7 @@ success_symbol = '[❯](bold green)'
 error_symbol = '[❯](bold red)'
 
 [directory]
-style = "bg:#DA627D bold fg:#000000"
+style = "bg:#3B7C78 bold fg:#FFFFFF"
 format = "[   $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -43,7 +43,7 @@ style = "bold italic red"
 
 [git_branch]
 symbol = " "
-style = "bg:#FCA17D bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#000000"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -57,11 +57,11 @@ modified = "📝×${count} "
 staged = "✉️×${count} "
 renamed = "[➜](bright-yellow)×${count} "
 deleted = "🗑️×${count} "
-style = "bg:#FCA17D bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#000000"
 format = '[$all_status$ahead_behind]($style)'
 
 [git_state]
-style = "bg:#FCA17D"
+style = "bg:#4CAFA7"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"	
@@ -79,24 +79,23 @@ disabled = true
 
 [c]
 symbol = ' '
-style = "bg:#86BBD8 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000000"
 format = '[ $symbol ]($style)'
 
 [custom.cpp]
 symbol = "󰙲 "
-style = "bg:#86BBD8 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000000"
 format = '[ $symbol ]($style)'
 detect_extensions = ['cpp', 'cc', 'hpp']
 
-
 [lua]
 symbol = '🌙'
-style = "bg:#86BBD8 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000000"
 format = '[ $symbol ]($style)'
 
 [python]
 format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
-style = "bg:#86BBD8 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000000"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -104,5 +103,6 @@ version_format = "v${raw}"
 
 [rust]
 symbol = ""
-style = "bg:#86BBD8 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000000"
 format = '[ $symbol ]($style)'
+
