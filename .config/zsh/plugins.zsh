@@ -17,16 +17,9 @@ install_plugin() {
 
 install_plugin "zsh-completions" "https://github.com/zsh-users/zsh-completions.git"
 install_plugin "fzf-tab" "https://github.com/Aloxaf/fzf-tab"
-install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 install_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions"
+install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
-# Hilight Styling (uses ANSI colour codes)
-ZSH_HIGHLIGHT_STYLES[comment]='fg=8' # light gray
-ZSH_HIGHLIGHT_STYLES[command]='fg=green'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=33' # light blue
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[function]='fg=magenta'
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9' # red
 # Autosuggestion Styling
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # light gray
@@ -49,6 +42,14 @@ autoload -Uz compinit && compinit
 source_other_plugin "fzf-tab" "fzf-tab.plugin.zsh"
 source_other_plugin "zsh-autosuggestions" "zsh-autosuggestions.zsh"
 source_other_plugin "zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
+
+# Hilight Styling (uses ANSI colour codes)
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8' # light gray
+ZSH_HIGHLIGHT_STYLES[command]='fg=green'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=33' # light blue
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[function]='fg=magenta'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9' # red
 
 # Completion Styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
