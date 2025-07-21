@@ -1,6 +1,5 @@
-# Set the directory we want to store zinit and plugins
-ZINIT_ALL="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
-ZINIT_HOME="$ZINIT_ALL/zinit.git"
+# Set the directory where manually loaded plugins will come from
+ZSH_PLUGIN_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh_plugins"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
