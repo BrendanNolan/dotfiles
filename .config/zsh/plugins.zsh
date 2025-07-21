@@ -1,3 +1,5 @@
+HISTFILE="${XDG_CACHE_HOME}/.zsh_history"
+
 # Set the directory where manually loaded plugins will come from
 ZSH_PLUGIN_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh_plugins"
 
@@ -27,7 +29,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'  # light gray
 source_zsh_completions() {
 	fpath=(path/to/zsh-completions/src $fpath)
 	if "$FORCE_REBUILD_ZCOMP_DUMP"; then
-       rm -f "${XDG_CACHE_HOME}/.zcompdump"
+            rm -f "${XDG_CACHE_HOME}/.zcompdump"
 	fi
 }
 
@@ -38,7 +40,7 @@ source_other_plugin() {
 }
 
 source_zsh_completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d "${XDG_CACHE_HOME}/.zcompdump"
 source_other_plugin "fzf-tab" "fzf-tab.plugin.zsh"
 source_other_plugin "zsh-autosuggestions" "zsh-autosuggestions.zsh"
 source_other_plugin "zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
