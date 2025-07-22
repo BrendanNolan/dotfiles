@@ -3,16 +3,16 @@ HISTFILE="${XDG_CACHE_HOME}/.zsh_history"
 # Set the directory where manually loaded plugins will come from
 ZSH_PLUGIN_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh_plugins"
 
-FORCE_REBUILD_ZCOMP_DUMP=false
+first_load_of_zsh_completions=false
 
 install_plugin() {
 	local NAME=$1
 	local REPO=$2
 	local LOCATION="${ZSH_PLUGIN_HOME}/${NAME}"
 	if [[ ! -d "${LOCATION}" ]]; then
-        git clone "${REPO}" "${LOCATION}"
+		git clone "${REPO}" "${LOCATION}"
 		if [[ "${NAME}" = "zsh-completions" ]]; then
-            FORCE_REBUILD_ZCOMP_DUMP=true
+			first_load_of_zsh_completions=true
 		fi
 	fi
 }
@@ -24,7 +24,7 @@ install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-synta
 
 source_zsh_completions() {
 	fpath=(path/to/zsh-completions/src $fpath)
-	if "$FORCE_REBUILD_ZCOMP_DUMP"; then
+	if "$first_load_of_zsh_completions"; then
             rm -f "${XDG_CACHE_HOME}/.zcompdump"
 	fi
 }
@@ -59,3 +59,8 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=33' # light blue
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[function]='fg=magenta'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=9' # red
+
+unset first_load_of_zsh_completions
+unset -f install_plugin
+unset -f source_other_plugin
+unset -f source_zsh_completions
