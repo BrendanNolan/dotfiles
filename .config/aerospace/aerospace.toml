@@ -77,11 +77,6 @@ run = 'move-node-to-workspace 4'
     shift-k = ['move up', 'mode main']
     shift-l = ['move right', 'mode main']
 
-    ctrl-h = ['join-with left', 'mode main']
-    ctrl-j = ['join-with down', 'mode main']
-    ctrl-k = ['join-with up', 'mode main']
-    ctrl-l = ['join-with right', 'mode main']
-
     t = ['move-node-to-workspace --focus-follows-window 1', 'mode main']
     0 = ['move-node-to-workspace --focus-follows-window 1', 'mode main']
     1 = ['move-node-to-workspace --focus-follows-window 2', 'mode main']
