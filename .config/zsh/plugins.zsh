@@ -23,10 +23,10 @@ install_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosugge
 install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 
 source_zsh_completions() {
-	fpath=(path/to/zsh-completions/src $fpath)
 	if "$first_load_of_zsh_completions"; then
             rm -f "${XDG_CACHE_HOME}/.zcompdump"
 	fi
+	fpath=(path/to/zsh-completions/src $fpath)
 }
 
 source_other_plugin() {
