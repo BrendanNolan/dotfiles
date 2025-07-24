@@ -2,7 +2,7 @@ HISTFILE="${XDG_CACHE_HOME}/.zsh_history"
 
 # Set the directory where manually loaded plugins will come from
 ZSH_PLUGIN_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh_plugins"
-if [[ ! -d "${ZSH_PLUGIN_HOME}" ]];
+if [[ ! -d "${ZSH_PLUGIN_HOME}" ]]; then
 	mkdir -p "${ZSH_PLUGIN_HOME}"
 fi
 
