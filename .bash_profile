@@ -1,6 +1,7 @@
 # Config
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
+
 # Dev
 export DEV_HOME="${HOME}/dev"
 export SCRIPTS_HOME="${DEV_HOME}/scripts"
@@ -11,6 +12,7 @@ export RUST_BACKTRACE=1
 export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
 
+#PATH
 PATH="/usr/bin:${PATH}"
 PATH="/usr/local/bin:${PATH}"
 PATH="/bin:${PATH}"
@@ -18,7 +20,6 @@ PATH="/usr/sbin:${PATH}"
 PATH="/sbin:${PATH}"
 PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${SCRIPTS_HOME}:${PATH}"
-
 # macOS Stuff
 if [[ "$(uname)" = Darwin ]]; then
 	if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -28,7 +29,6 @@ if [[ "$(uname)" = Darwin ]]; then
 	fi
 	export PROTOC=/opt/homebrew/bin/protoc
 fi
-
 uniqify_path() {
 	local IFS=:
 	local -a parts=("${PATH}") # Split the path into an array based on colon separators
@@ -44,7 +44,6 @@ uniqify_path() {
 		echo "${unique[*]}"
 	) # Echo the path with colons as separators
 }
-
 uniquify_path
 unset -f uniquify_path
 export PATH
