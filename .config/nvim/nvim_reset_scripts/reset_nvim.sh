@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm -rf ~/.cache/nvim
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
-rm -rf ~/.config/nvim/plugin
+rm -rf "${HOME}/.cache/nvim"
+rm -rf "${HOME}/.local/share/nvim"
+rm -rf "${HOME}/.local/state/nvim"
+rm -rf "${HOME}/.config/nvim/plugin"

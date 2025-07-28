@@ -1,3 +1,5 @@
-rm -rf ~/.local/share/nvim/lazy
-rm -rf ~/.local/state/nvim/lazy
-rm -f ~/.config/nvim/lazy-lock.json
+#!/usr/bin/env bash
+
+rm -rf "${HOME}/.local/share/nvim/lazy"
+rm -rf "${HOME}/.local/state/nvim/lazy"
+rm -f "${HOME}/.config/nvim/lazy-lock.json"
