@@ -1,12 +1,15 @@
+# Config
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+# Dev
+export DEV_HOME="${HOME}/dev"
+export SCRIPTS_HOME="${DEV_HOME}/scripts"
+
 # PATH
 ## zsh automatically turns the path array into PATH. Here, we tell zsh that the path array should
 ## remove duplicates automatically
 typeset -U path
-path+=(/usr/bin "${HOME}/dev/scripts" "${HOME}/.cargo/bin" /usr/local/bin /bin /usr/sbin /sbin)
-
-# Config
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_CACHE_HOME="${HOME}/.cache"
+path+=(/usr/bin "${SCRIPTS_HOME}" "${HOME}/.cargo/bin" /usr/local/bin /bin /usr/sbin /sbin)
 
 # OTHER ENV VARS
 export RUSTC_WRAPPER="${HOME}/.cargo/bin/sccache"

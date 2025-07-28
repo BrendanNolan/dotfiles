@@ -61,10 +61,10 @@ run = 'move-node-to-workspace 4'
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
     backspace = 'mode main'
-    x = ['exec-and-forget "${HOME}/dev/scripts/killapps"']
+    x = ['exec-and-forget "${SCRIPTS_HOME}/killapps"']
     c = ['reload-config', 'mode main']
-    r = ['exec-and-forget "${HOME}/dev/scripts/repatriate_window"', 'mode main']
-    a = ['exec-and-forget "${HOME}/dev/scripts/repatriate_window" -a', 'mode main']
+    r = ['exec-and-forget "${SCRIPTS_HOME}/repatriate_window"', 'mode main']
+    a = ['exec-and-forget "${SCRIPTS_HOME}/repatriate_window" -a', 'mode main']
     f = ['flatten-workspace-tree', 'mode main'] # reset layout
 
     h = ['focus left', 'mode main']
