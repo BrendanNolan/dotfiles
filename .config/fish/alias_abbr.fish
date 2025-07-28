@@ -21,3 +21,7 @@ abbr --add tls 'tmux ls'
 abbr --add tm 'tmux'
 ## Misc
 abbr nv 'nvim .'
+## find hidden
+abbr --add findh 'find . ! -path \'./.git/*\''
+## grep hidden
+abbr --add greph 'grep -rn --exclude-dir=\'.git\''
