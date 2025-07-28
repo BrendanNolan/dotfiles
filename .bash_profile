@@ -46,4 +46,5 @@ uniqify_path() {
 }
 
 uniquify_path
+unset -f uniquify_path
 export PATH
