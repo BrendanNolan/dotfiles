@@ -2,14 +2,14 @@
 ## zsh automatically turns the path array into PATH. Here, we tell zsh that the path array should
 ## remove duplicates automatically
 typeset -U path
-path+=(/usr/bin $HOME/dev/scripts $HOME/.cargo/bin /usr/local/bin /bin /usr/sbin /sbin)
+path+=(/usr/bin "${HOME}/dev/scripts" "${HOME}/.cargo/bin" /usr/local/bin /bin /usr/sbin /sbin)
 
 # Config
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
 
 # OTHER ENV VARS
-export RUSTC_WRAPPER="$HOME/.cargo/bin/sccache"
+export RUSTC_WRAPPER="${HOME}/.cargo/bin/sccache"
 export RUST_BACKTRACE=1
 export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
