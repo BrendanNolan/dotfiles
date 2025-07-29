@@ -8,6 +8,7 @@ abbr --add g git
 abbr --add ge 'git add . && git status && sleep 1 && git diff --cached'
 abbr --add create-remote-repo 'gh repo create --source=. --private --push'
 abbr --add vis 'gh repo view --json visibility -q .visibility'
+abbr --add bak 'git branch -D bak && git branch bak && git diff bak HEAD'
 ## Copilot
 abbr --add cpe 'gh copilot explain'
 abbr --add cps 'gh copilot suggest'
