@@ -11,11 +11,7 @@ install_plugin() {
 	local REPO=$2
 	local LOCATION="${ZSH_PLUGIN_HOME}/${NAME}"
 	if [[ ! -d "${LOCATION}" ]]; then
-		git clone "${REPO}" "${LOCATION}" || {
-			echo "Failed to clone ${NAME}, exiting ..."
-		        sleep 1
-			exit 1
-		}
+		git clone "${REPO}" "${LOCATION}"
 		if [[ "${NAME}" = "zsh-completions" ]]; then
 			first_load_of_zsh_completions=true
 		fi

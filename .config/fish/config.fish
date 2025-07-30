@@ -8,16 +8,8 @@ if status is-interactive
 
     if not functions -q fisher
         echo "Installing fisher ..."
-        set tmp_file (mktemp)
-        if not curl -sL \
-            https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish \
-            > tmp_file && source tmp_file && fisher install jorgebucaran/fisher
-                rm -f tmp_file
-                echo "Could not install fisher, exiting ..." 
-                sleep 1
-                exit 1
-        end
-        rm -f tmp_file
+        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish \
+            | source && fisher install jorgebucaran/fisher
     end
 
     if not contains gazorby/fifc (fisher list)
