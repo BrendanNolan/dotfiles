@@ -3,9 +3,9 @@
 # dir_bg 3B7C78
 # dir_fg FFFFFF
 # git_bg 4CAFA7
-# git_fg 000000
+# git_fg FFFFFF
 # lang_bg A0DAD5
-# lang_fg 000000
+# lang_fg FFFFFF
 
 command_timeout = 1000 # miliseconds
 
@@ -52,7 +52,7 @@ style = "bold italic red"
 
 [git_branch]
 symbol = " "
-style = "bg:#4CAFA7 bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#FFFFFF"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -66,7 +66,7 @@ modified = "📝×${count} "
 staged = "✉️×${count} "
 renamed = "[➜](bright-yellow)×${count} "
 deleted = "🗑️×${count} "
-style = "bg:#4CAFA7 bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#FFFFFF"
 format = '[$all_status$ahead_behind]($style)'
 
 [git_state]
@@ -88,23 +88,23 @@ disabled = true
 
 [c]
 symbol = ' '
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#FFFFFF"
 format = '[ $symbol ]($style)'
 
 [custom.cpp]
 symbol = "󰙲 "
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#FFFFFF"
 format = '[ $symbol ]($style)'
 detect_extensions = ['cpp', 'cc', 'hpp']
 
 [lua]
 symbol = '🌙'
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#FFFFFF"
 format = '[ $symbol ]($style)'
 
 [python]
 format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#FFFFFF"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -112,6 +112,6 @@ version_format = "v${raw}"
 
 [rust]
 symbol = ""
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#FFFFFF"
 format = '[ $symbol ]($style)'
 
