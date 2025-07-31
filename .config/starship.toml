@@ -1,3 +1,12 @@
+# status_bg 2A4D4F
+# status_fg FFFFFF
+# dir_bg 3B7C78
+# dir_fg FFFFFF
+# git_bg 4CAFA7
+# git_fg 000000
+# lang_bg A0DAD5
+# lang_fg 000000
+
 command_timeout = 1000 # miliseconds
 
 format = """
