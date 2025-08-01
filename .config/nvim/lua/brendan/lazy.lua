@@ -84,10 +84,6 @@ local plugins = {
     -- Error Displayer --
      "folke/trouble.nvim",   -- Docs say to require web-devicons but that didn't work for me.
 
-    -- Floating Terminal --
-    'voldikss/vim-floaterm',
-    -----------------------
-
     -- vim-test --
     'vim-test/vim-test',
     --------------
