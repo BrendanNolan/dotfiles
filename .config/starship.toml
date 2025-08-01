@@ -1,4 +1,4 @@
-# status_bg 2A4D4F
+# status_bg 808080
 # status_fg FFFFFF
 # dir_bg 3B7C78
 # dir_fg FFFFFF
@@ -10,9 +10,9 @@
 command_timeout = 1000 # miliseconds
 
 format = """
-[](#2A4D4F)\
+[](#808080)\
 $status\
-[](fg:#2A4D4F bg:#3B7C78)\
+[](fg:#808080 bg:#3B7C78)\
 $directory\
 [](fg:#3B7C78 bg:#4CAFA7)\
 $git_branch\
@@ -28,7 +28,7 @@ $rust\
 """
 
 [status]
-style = 'bg:#2A4D4F fg:#FFFFFF'
+style = 'bg:#808080 fg:#FFFFFF'
 success_symbol = 'y' # Never showing this but if it is not set, then we will show no exit code in the success case
 format = '[$status]($style)'
 disabled = false
