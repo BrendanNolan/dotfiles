@@ -1,11 +1,15 @@
+# These are basically substitutes for the fact that toml does not have variables
+# Each of these colours is unique in the document (that's the reason for weird codes like
+# almost-exactly-white) and you can change the colours by doing a find-replace on the colour
+# next to the labelled meaning
 # status_bg 2A4D4F
-# status_fg FFFFFF
+# status_fg FFFFF7
 # dir_bg 3B7C78
-# dir_fg FFFFFF
+# dir_fg FFFFF6
 # git_bg 4CAFA7
-# git_fg 000000
+# git_fg 000002
 # lang_bg A0DAD5
-# lang_fg 000000
+# lang_fg 000001
 
 command_timeout = 1000 # miliseconds
 
@@ -28,7 +32,7 @@ $rust\
 """
 
 [status]
-style = 'bg:#2A4D4F fg:#FFFFFF'
+style = 'bg:#2A4D4F fg:#FFFFF7'
 success_symbol = 'y' # Never showing this but if it is not set, then we will show no exit code in the success case
 format = '[$status]($style)'
 disabled = false
@@ -38,7 +42,7 @@ success_symbol = '[❯](bold green)'
 error_symbol = '[❯](bold red)'
 
 [directory]
-style = "bg:#3B7C78 bold fg:#FFFFFF"
+style = "bg:#3B7C78 bold fg:#FFFFF6"
 format = "[   $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -52,7 +56,7 @@ style = "bold italic red"
 
 [git_branch]
 symbol = " "
-style = "bg:#4CAFA7 bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#000002"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -66,7 +70,7 @@ modified = "📝×${count} "
 staged = "✉️×${count} "
 renamed = "[➜](bright-yellow)×${count} "
 deleted = "🗑️×${count} "
-style = "bg:#4CAFA7 bold fg:#000000"
+style = "bg:#4CAFA7 bold fg:#000002"
 format = '[$all_status$ahead_behind]($style)'
 
 [git_state]
@@ -88,23 +92,23 @@ disabled = true
 
 [c]
 symbol = ' '
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000001"
 format = '[ $symbol ]($style)'
 
 [custom.cpp]
 symbol = "󰙲 "
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000001"
 format = '[ $symbol ]($style)'
 detect_extensions = ['cpp', 'cc', 'hpp']
 
 [lua]
 symbol = '🌙'
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000001"
 format = '[ $symbol ]($style)'
 
 [python]
 format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000001"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -112,6 +116,6 @@ version_format = "v${raw}"
 
 [rust]
 symbol = ""
-style = "bg:#A0DAD5 bold fg:#000000"
+style = "bg:#A0DAD5 bold fg:#000001"
 format = '[ $symbol ]($style)'
 
