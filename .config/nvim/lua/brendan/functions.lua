@@ -12,7 +12,6 @@ function SetupMasonIfNotAlreadyDone()
             'clangd',
             -- 'jedi_language_server', Not working for some reason
             'lua_ls',
-            'perlnavigator',
         }
     })
 
