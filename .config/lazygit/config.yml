@@ -1,9 +1,5 @@
 os:
-  editCommand: 'floaterm'
-
-keybinding:
-  universal:
-    return: '<c-\>'
+  editCommand: 'nvim'
 
 gui:
   theme:

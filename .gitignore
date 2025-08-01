@@ -1,3 +1,4 @@
 .config/htop
 .config/github-copilot/hosts.json
 .config/zsh/.zsh_history
+.config/lazygit/state.yml
