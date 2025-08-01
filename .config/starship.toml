@@ -2,37 +2,37 @@
 # Each of these colours is unique in the document (that's the reason for weird codes like
 # almost-exactly-white) and you can change the colours by doing a find-replace on the colour
 # next to the labelled meaning
-# status_bg 4B3B2A
-# status_fg F5EFE6
-# dir_bg 8C593B
-# dir_fg FCF9F0
-# git_bg B57F50
-# git_fg 2B1D13
-# lang_bg D5A96C
-# lang_fg 2A1A09
+# status_bg 7E2E1E
+# status_fg F9E5DC
+# dir_bg B94320
+# dir_fg FFF3ED
+# git_bg D3582F
+# git_fg 30110A
+# lang_bg EC8353
+# lang_fg 3A130C
 
 command_timeout = 1000 # miliseconds
 
 format = """
-[](#4B3B2A)\
+[](#7E2E1E)\
 $status\
-[](fg:#4B3B2A bg:#8C593B)\
+[](fg:#7E2E1E bg:#B94320)\
 $directory\
-[](fg:#8C593B bg:#B57F50)\
+[](fg:#B94320 bg:#D3582F)\
 $git_branch\
 $git_status\
 $git_state\
-[](fg:#B57F50 bg:#D5A96C)\
+[](fg:#D3582F bg:#EC8353)\
 $c\
 $lua\
 $python\
 $rust\
-[](fg:#D5A96C)\
+[](fg:#EC8353)\
 \n$character
 """
 
 [status]
-style = 'bg:#4B3B2A fg:#F5EFE6'
+style = 'bg:#7E2E1E fg:#F9E5DC'
 success_symbol = 'y' # Never showing this but if it is not set, then we will show no exit code in the success case
 format = '[$status]($style)'
 disabled = false
@@ -42,7 +42,7 @@ success_symbol = '[❯](bold green)'
 error_symbol = '[❯](bold red)'
 
 [directory]
-style = "bg:#8C593B bold fg:#FCF9F0"
+style = "bg:#B94320 bold fg:#FFF3ED"
 format = "[   $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -56,7 +56,7 @@ style = "bold italic red"
 
 [git_branch]
 symbol = " "
-style = "bg:#B57F50 bold fg:#2B1D13"
+style = "bg:#D3582F bold fg:#30110A"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
@@ -70,11 +70,11 @@ modified = "📝×${count} "
 staged = "✉️×${count} "
 renamed = "[➜](bright-yellow)×${count} "
 deleted = "🗑️×${count} "
-style = "bg:#B57F50 bold fg:#2B1D13"
+style = "bg:#D3582F bold fg:#30110A"
 format = '[$all_status$ahead_behind]($style)'
 
 [git_state]
-style = "bg:#B57F50"
+style = "bg:#D3582F"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"	
@@ -92,23 +92,23 @@ disabled = true
 
 [c]
 symbol = ' '
-style = "bg:#D5A96C bold fg:#2A1A09"
+style = "bg:#EC8353 bold fg:#3A130C"
 format = '[ $symbol ]($style)'
 
 [custom.cpp]
 symbol = "󰙲 "
-style = "bg:#D5A96C bold fg:#2A1A09"
+style = "bg:#EC8353 bold fg:#3A130C"
 format = '[ $symbol ]($style)'
 detect_extensions = ['cpp', 'cc', 'hpp']
 
 [lua]
 symbol = '🌙'
-style = "bg:#D5A96C bold fg:#2A1A09"
+style = "bg:#EC8353 bold fg:#3A130C"
 format = '[ $symbol ]($style)'
 
 [python]
 format = '[🐍 (${version} )(\($virtualenv\) )]($style)'
-style = "bg:#D5A96C bold fg:#2A1A09"
+style = "bg:#EC8353 bold fg:#3A130C"
 pyenv_prefix = "venv "
 python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 detect_extensions = ["py"]
@@ -116,6 +116,6 @@ version_format = "v${raw}"
 
 [rust]
 symbol = ""
-style = "bg:#D5A96C bold fg:#2A1A09"
+style = "bg:#EC8353 bold fg:#3A130C"
 format = '[ $symbol ]($style)'
 
