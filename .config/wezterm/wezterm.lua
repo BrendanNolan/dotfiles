@@ -35,10 +35,6 @@ return {
             end),
             selection_word_boundary = " ",
         },
-    },
-    default_prog = {
-        os.getenv("SHELL"), "--login -i",
-    },
-
+    }
 }
 
