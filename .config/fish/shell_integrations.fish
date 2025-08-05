@@ -1,5 +1,5 @@
 if command -q zoxide
-    zoxide init --cmd cd fish | source
+    zoxide init fish | source
 end
 
 if command -q fzf
