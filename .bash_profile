@@ -29,20 +29,18 @@ if [[ "$(uname)" = Darwin ]]; then
 	fi
 	export PROTOC=/opt/homebrew/bin/protoc
 fi
-uniqify_path() {
+uniquify_path() {
 	local IFS=:
 	local -a parts=("${PATH}") # Split the path into an array based on colon separators
-	local -A seen=()           # Create an associative array of things already seen
+	local -A seen=() # Create an associative array of things already seen
 	local -a unique=()
-
 	for dir in "${parts[@]}"; do
-		[[ -n "$dir" && -z "${seen[$dir]}" ]] && unique+=("$dir") && seen["$dir"]=1
+		[[ -n "${dir}" && -z "${seen[${dir}]}" ]] && unique+=("${dir}") && seen["${dir}"]=1
 	done
-
 	PATH=$(
 		IFS=:
 		echo "${unique[*]}"
-	) # Echo the path with colons as separators
+    ) # Echo the uniquified array with colon separators
 }
 uniquify_path
 unset -f uniquify_path
