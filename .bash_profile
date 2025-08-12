@@ -31,14 +31,14 @@ fi
 # scripts stuff
 readarray -d '' scripts_subdirs < <(fd -0 -t d . "${SCRIPTS_HOME}")
 for dir in "${scripts_subdirs[@]}"; do
-        PATH="${dir}:${PATH}"
+	PATH="${dir}:${PATH}"
 done
 PATH="${SCRIPTS_HOME}:${PATH}"
 unset scripts_subdirs
 uniquify_path() {
 	local IFS=:
 	local -a parts=("${PATH}") # Split the path into an array based on colon separators
-	local -A seen=() # Create an associative array of things already seen
+	local -A seen=()           # Create an associative array of things already seen
 	local -a unique=()
 	for dir in "${parts[@]}"; do
 		[[ -n "${dir}" && -z "${seen[${dir}]}" ]] && unique+=("${dir}") && seen["${dir}"]=1
@@ -46,7 +46,7 @@ uniquify_path() {
 	PATH=$(
 		IFS=:
 		echo "${unique[*]}"
-    ) # Echo the uniquified array with colon separators
+	) # Echo the uniquified array with colon separators
 }
 uniquify_path
 unset -f uniquify_path
