@@ -31,7 +31,7 @@ fi
 # scripts stuff
 readarray -d '' scripts_subdirs < <(fd -0 -t d . "${SCRIPTS_HOME}")
 for dir in "${scripts_subdirs[@]}"; do
-	PATH="${dir}:${PATH}"
+	PATH="${dir%/}:${PATH}"
 done
 PATH="${SCRIPTS_HOME}:${PATH}"
 unset scripts_subdirs
