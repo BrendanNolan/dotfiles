@@ -19,7 +19,6 @@ PATH="/bin:${PATH}"
 PATH="/usr/sbin:${PATH}"
 PATH="/sbin:${PATH}"
 PATH="${HOME}/.cargo/bin:${PATH}"
-PATH="${SCRIPTS_HOME}:${PATH}"
 # macOS Stuff
 if [[ "$(uname)" = Darwin ]]; then
 	if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -29,6 +28,13 @@ if [[ "$(uname)" = Darwin ]]; then
 	fi
 	export PROTOC=/opt/homebrew/bin/protoc
 fi
+# scripts stuff
+readarray -d '' scripts_subdirs < <(fd -0 -t d . "${SCRIPTS_HOME}")
+for dir in "${scripts_subdirs[@]}"; do
+        PATH="${dir}:${PATH}"
+done
+PATH="${SCRIPTS_HOME}:${PATH}"
+unset scripts_subdirs
 uniquify_path() {
 	local IFS=:
 	local -a parts=("${PATH}") # Split the path into an array based on colon separators
