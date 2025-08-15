@@ -8,13 +8,25 @@ if status is-interactive
 
     if not functions -q fisher
         echo "Installing fisher ..."
-        curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish \
-            | source && fisher install jorgebucaran/fisher
+        set -l fisher_file (mktemp)
+        set -l fisher_url \
+            https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
+        if curl -sL $fisher_url > $fisher_file
+            source $fisher_file && fisher install jorgebucaran/fisher
+        end
+        if not functions -q fisher
+            echo "Failed to install fisher"
+        end
+        rm -f $fisher_file
     end
 
-    if not contains gazorby/fifc (fisher list)
-        echo "Installing gazorby/fifc"
-        fisher install gazorby/fifc
+    if functions -q fisher
+        if not contains gazorby/fifc (fisher list)
+            echo "Installing gazorby/fifc ..."
+            if not fisher install gazorby/fifc
+                echo "Failed to install gazorby/fifc"
+            end
+        end
     end
 
     fish_vi_key_bindings
