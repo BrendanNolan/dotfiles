@@ -116,6 +116,7 @@ vim.api.nvim_set_keymap('n', '<leader>fu', 'l[fz<CR>', { noremap = false, desc =
 vim.api.nvim_set_keymap('n', '<leader>su', 'l[sz<CR>', { noremap = false, desc = 'Put current class at top of file'})
 
 vim.keymap.set('n', '<C-q>', 'z<CR>', {desc="Move cursor line to top of screen"})
+vim.keymap.set({'n', 'i'}, '<C-s>', '<cmd>wa<CR><Esc>', { desc = "Write all buffers and go to normal mode"})
 
 vim.keymap.set('n', '<leader>da', 'gg0cG', {desc="Clear whole buffer"})
 
