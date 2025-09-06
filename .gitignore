@@ -4,6 +4,8 @@
 .config/fish/completions/
 .config/fish/conf.d/
 .config/fish/functions/_fifc*
+.config/fish/functions/fifc.fish
+.config/fish/functions/fisher.fish
 .config/fish/themes/
 .config/fish/fish_plugins
 .config/fish/fish_variables
