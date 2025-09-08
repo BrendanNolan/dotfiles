@@ -29,7 +29,7 @@ if [[ "$(uname)" = Darwin ]]; then
 	export PROTOC=/opt/homebrew/bin/protoc
 fi
 # scripts stuff
-readarray -d '' scripts_subdirs < <(fd -0 -t d . "${SCRIPTS_HOME}")
+readarray -d '' scripts_subdirs < <(find "${SCRIPTS_HOME}" -type d -name .git -prune -o -type d -print0)
 for dir in "${scripts_subdirs[@]}"; do
 	PATH="${dir%/}:${PATH}"
 done
