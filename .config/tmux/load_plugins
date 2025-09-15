@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+bail() {
+    echo "${1}"
+    exit 1
+}
+
+if [[ ! -e "${TMUX_PLUGIN_MANAGER_PATH}" ]]; then
+    mkdir -p "${TMUX_PLUGIN_MANAGER_PATH}"
+fi
+
+install_if_not_there() {
+    local repo
+    repo="${1}"
+    local target_dir
+    target_dir="${TMUX_PLUGIN_MANAGER_PATH}/${repo##*/}"
+    if [[ ! -e "${target_dir}" ]]; then
+        if ! git clone "${repo}" "${target_dir}"; then
+            bail "Could not install from ${repo}"
+        fi
+    fi
+    local plugin_name
+    plugin_name="${repo##*tmux-}"
+    local entry_point_a
+    entry_point_a="${target_dir}/${plugin_name}.tmux"
+    local entry_point_b
+    entry_point_b="${target_dir}/main.tmux"
+    if [[ -e "${entry_point_a}" ]]; then
+        "${entry_point_a}"
+    elif [[ -e "${entry_point_b}" ]]; then
+        "${entry_point_b}"
+    else
+        bail "Could not initialise plugin from ${repo}"
+    fi
+}
+
+install_if_not_there https://github.com/tmux-plugins/tmux-sensible
+install_if_not_there https://github.com/sainnhe/tmux-fzf
+install_if_not_there https://github.com/tmux-plugins/tmux-battery
+install_if_not_there https://github.com/o0th/tmux-nova

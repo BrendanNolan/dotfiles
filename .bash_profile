@@ -11,6 +11,7 @@ export RUSTC_WRAPPER="${HOME}/.cargo/bin/sccache"
 export RUST_BACKTRACE=1
 export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
+export TMUX_PLUGIN_MANAGER_PATH="${XDG_CACHE_HOME}/tmux/plugins"
 
 #PATH
 PATH="/usr/bin:${PATH}"
