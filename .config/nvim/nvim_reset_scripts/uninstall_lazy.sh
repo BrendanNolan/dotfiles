@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-rm -rf "${HOME}/.local/share/nvim/lazy"
-rm -rf "${HOME}/.local/state/nvim/lazy"
-rm -f "${HOME}/.config/nvim/lazy-lock.json"
+rm -rf "${XDG_DATA_HOME}/nvim/lazy"
+rm -rf "${XDG_STATE_HOME}/nvim/lazy"
+rm -f "${XDG_CONFIG_HOME}/nvim/lazy-lock.json"

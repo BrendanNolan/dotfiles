@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-rm -rf "${HOME}/.cache/nvim"
-rm -rf "${HOME}/.local/share/nvim"
-rm -rf "${HOME}/.local/state/nvim"
-rm -rf "${HOME}/.config/nvim/plugin"
+rm -rf "${XDG_CACHE_HOME}/nvim"
+rm -rf "${XDG_DATA_HOME}/nvim"
+rm -rf "${XDG_STATE_HOME}/nvim"

@@ -1,15 +1,15 @@
 ## where to store your database, default is your system data directory
-## linux/mac: ~/.local/share/atuin/history.db
+## linux/mac: "${XDG_DATA_HOME}/atuin/history.db" (you will need to resolve the path, since TOML does not expand env vars)
 ## windows: %USERPROFILE%/.local/share/atuin/history.db
 # db_path = "~/.history.db"
 
 ## where to store your encryption key, default is your system data directory
-## linux/mac: ~/.local/share/atuin/key
+## linux/mac: "${XDG_DATA_HOME}/atuin/key" (you will need to resolve the path, since TOML does not expand env vars)
 ## windows: %USERPROFILE%/.local/share/atuin/key
 # key_path = "~/.key"
 
 ## where to store your auth session token, default is your system data directory
-## linux/mac: ~/.local/share/atuin/session
+## linux/mac: "${XDG_DATA_HOME}/atuin/session" (you will need to resolve the path, since TOML does not expand env vars)
 ## windows: %USERPROFILE%/.local/share/atuin/session
 # session_path = "~/.session"
 
@@ -219,9 +219,9 @@ records = true
 # sync_frequency = 300
 
 ## The path to the unix socket used by the daemon (on unix systems)
-## linux/mac: ~/.local/share/atuin/atuin.sock
+## linux/mac: "${XDG_DATA_HOME}/atuin/atuin.sock" (you will need to resolve the path, since TOML does not expand env vars)
 ## windows: Not Supported
-# socket_path = "~/.local/share/atuin/atuin.sock"
+# socket_path = "${XDG_DATA_HOME}/atuin/atuin.sock" (you will need to resolve the path, since TOML does not expand env vars)
 
 ## Use systemd socket activation rather than opening the given path (the path must still be correct for the client)
 ## linux: false
