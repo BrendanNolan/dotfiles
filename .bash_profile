@@ -30,6 +30,8 @@ if [[ "$(uname)" = Darwin ]]; then
 		PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 	fi
 	export PROTOC=/opt/homebrew/bin/protoc
+else
+    PATH="/snap/bin:${PATH}"
 fi
 # scripts stuff
 readarray -d '' scripts_subdirs < <(find "${SCRIPTS_HOME}" -type d -name .git -prune -o -type d -print0)
