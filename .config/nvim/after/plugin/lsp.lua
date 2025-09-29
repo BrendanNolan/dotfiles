@@ -1,6 +1,3 @@
--- LSP --
-local lsp = require("lspconfig")
-
 SetupMasonIfNotAlreadyDone()
 
 vim.keymap.set("n", "<leader>lsp", "<cmd>LspInfo<CR>")
@@ -193,7 +190,7 @@ rt.setup({
 })
 
 -- Clangd --
-lsp.clangd.setup{
+vim.lsp.config.clangd = {
     on_attach = function(client, bufnr)
         do_general_on_attach_stuff(client, bufnr)
         vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
@@ -201,7 +198,7 @@ lsp.clangd.setup{
 }
 
 -- Lua --
-lsp.lua_ls.setup {
+vim.lsp.config.lua_ls = {
     on_attach = function(client, bufnr)
         do_general_on_attach_stuff(client, bufnr)
     end,
