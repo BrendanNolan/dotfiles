@@ -2,7 +2,7 @@ local builtin = require('telescope.builtin')
 
 -- Lsp
 vim.keymap.set('n', '<leader>rf', builtin.lsp_references, {desc = "Telescope show lsp refs"})
-vim.keymap.set('n', '<leader>tds', builtin.lsp_document_symbols, {desc = "Telescope show document symbols"})
+vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {desc = "Telescope show document symbols"})
 vim.keymap.set('n', '<leader>tws', builtin.lsp_workspace_symbols, {desc = "Telescope show workspace symbols"})
 
 -- File Finding

@@ -97,8 +97,6 @@ local plugins = {
 
     'nvim-tree/nvim-web-devicons',
 
-    'simrat39/symbols-outline.nvim',
-
     {
         "cbochs/portal.nvim",
         -- Optional dependencies
