@@ -15,6 +15,12 @@ export DISABLE_AUTO_TITLE=true
 export EDITOR=nvim
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_CACHE_HOME}/tmux/plugins"
 
+export TOOLS_HOME="${HOME}/.local/bin"
+mkdir -p "${TOOLS_HOME}"
+
+# For go install
+export GOBIN="${TOOLS_HOME}"
+
 #PATH
 PATH="/usr/bin:${PATH}"
 PATH="/usr/local/bin:${PATH}"
@@ -22,7 +28,7 @@ PATH="/bin:${PATH}"
 PATH="/usr/sbin:${PATH}"
 PATH="/sbin:${PATH}"
 PATH="${HOME}/.cargo/bin:${PATH}"
-# macOS Stuff
+PATH="${TOOLS_HOME}:${PATH}"
 if [[ "$(uname)" = Darwin ]]; then
 	if [[ -f "/opt/homebrew/bin/brew" ]]; then
 		# Sets some environment variables to make sure that brew works
