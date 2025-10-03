@@ -35,6 +35,7 @@ if [[ "$(uname)" = Darwin ]]; then
 		eval "$(/opt/homebrew/bin/brew shellenv)"
 		PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 	fi
+	# Force some tools to use homebrew protoc, even if `which protoc` finds a different protoc
 	export PROTOC=/opt/homebrew/bin/protoc
 else
     PATH="/snap/bin:${PATH}"
