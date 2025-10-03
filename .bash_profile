@@ -29,17 +29,22 @@ PATH="/usr/sbin:${PATH}"
 PATH="/sbin:${PATH}"
 PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${TOOLS_HOME}:${PATH}"
-if [[ "$(uname)" = Darwin ]]; then
-	if [[ -f "/opt/homebrew/bin/brew" ]]; then
-		# Sets some environment variables to make sure that brew works
-		eval "$(/opt/homebrew/bin/brew shellenv)"
-		PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
-	fi
-	# Force some tools to use homebrew protoc, even if `which protoc` finds a different protoc
-	export PROTOC=/opt/homebrew/bin/protoc
-else
-    PATH="/snap/bin:${PATH}"
+# Homebrew Stuff
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+	PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
+elif [[ -f "/usr/local/bin/brew" ]]; then
+	eval "$(/usr/local/bin/brew shellenv)"
+	PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
+elif [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	PATH="/home/linuxbrew/.linuxbrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 fi
+if which brew; then
+	PROTOC="$(brew --prefix)/opt/protobuf/bin/protoc"
+	export PROTOC
+fi
+
 # scripts stuff
 readarray -d '' scripts_subdirs < <(find "${SCRIPTS_HOME}" -type d -name .git -prune -o -type d -print0)
 for dir in "${scripts_subdirs[@]}"; do
