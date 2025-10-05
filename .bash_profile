@@ -31,14 +31,16 @@ PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${TOOLS_HOME}:${PATH}"
 # Homebrew Stuff
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
+	if [[ "$(uname)" != Darwin ]]; then
+		echo "/opt/homebrew/bin/brew unexpectedly present but not on macos"
+		exit 1
+	fi
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 	PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 elif [[ -f "/usr/local/bin/brew" ]]; then
 	eval "$(/usr/local/bin/brew shellenv)"
-	PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
 elif [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	PATH="/home/linuxbrew/.linuxbrew/opt/gnu-sed/libexec/gnubin:${PATH}"
 fi
 if which brew; then
 	PROTOC="$(brew --prefix)/opt/protobuf/bin/protoc"
