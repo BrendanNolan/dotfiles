@@ -29,6 +29,7 @@ PATH="/usr/sbin:${PATH}"
 PATH="/sbin:${PATH}"
 PATH="${HOME}/.cargo/bin:${PATH}"
 PATH="${TOOLS_HOME}:${PATH}"
+PATH="/usr/local/cuda/bin:${PATH}"
 # Homebrew Stuff
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	if [[ "$(uname)" != Darwin ]]; then
