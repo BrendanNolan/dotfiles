@@ -33,6 +33,7 @@ function GetCodelldbPath()
 end
 
 function GetLiblldbPath()
-    local extension_path = get_codelldb_extension_path()
-    return extension_path .. 'lldb/lib/liblldb.dylib'
+    local lib_lldb_path_minus_extension = get_codelldb_extension_path() .. 'lldb/lib/liblldb'
+    local this_os = vim.loop.os_uname().sysname;
+    return lib_lldb_path_minus_extension .. (this_os == "Linux" and ".so" or ".dylib")
 end
