@@ -1,4 +1,5 @@
-# Stop fish from any path shenanigans like reordering the path to put system paths first
+# Stop fish from any path shenanigans (like reordering the path to put system paths first) when
+# fish launches as a login shell (which, really, it never should)
 set -gx PATH $PATH
 
 if status is-interactive
