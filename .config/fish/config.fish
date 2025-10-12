@@ -1,3 +1,6 @@
+# Stop fish from any path shenanigans like reordering the path to put system paths first
+set -gx PATH $PATH
+
 if status is-interactive
     set -gx fish_greeting
     set -gx fish_color_command ebde34 # Set the color of text that I type on the command line
