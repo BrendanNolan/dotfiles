@@ -190,10 +190,41 @@ rt.setup({
 })
 
 -- Clangd --
+local switch_header_source = function()
+    local fname = vim.api.nvim_buf_get_name(0)
+    if fname == "" then
+        return
+    end
+    local base, cur_ext = fname:match("^(.*)%.([^.]+)$")
+    if not base then
+        return
+    end
+    local candidates = {}
+    if cur_ext == "h" or cur_ext == "hpp" or cur_ext == "cuh" then
+        for _, ext in ipairs({".cpp", ".cc", ".c", ".cu"}) do
+            table.insert(candidates, base .. ext)
+        end
+    elseif cur_ext == "cpp" or cur_ext == "cc" or cur_ext == "c" or cur_ext == "cu" then
+        for _, ext in ipairs({".h", ".hpp", ".cuh"}) do
+            table.insert(candidates, base .. ext)
+        end
+    else
+        return
+    end
+    for _, alt in ipairs(candidates) do
+        if vim.fn.filereadable(alt) == 1 then
+            vim.cmd("edit " .. vim.fn.fnameescape(alt))
+            return
+        end
+    end
+    vim.notify("No corresponding header/source file found.", vim.log.levels.INFO)
+end
+
 vim.lsp.config.clangd = {
     on_attach = function(client, bufnr)
         do_general_on_attach_stuff(client, bufnr)
-        vim.keymap.set("n", "<leader>hh", "<cmd>ClangdSwitchSourceHeader<CR>", { buffer = bufnr })
+        local opts = {buffer = bufnr, remap = false }
+        vim.keymap.set("n", "<leader>hh", switch_header_source, opts)
     end,
 }
 
