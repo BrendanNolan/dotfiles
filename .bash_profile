@@ -38,7 +38,6 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	fi
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 	PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:${PATH}"
-	PATH="/opt/homebrew/opt/llvm/bin:${PATH}"
 elif [[ -f "/usr/local/bin/brew" ]]; then
 	eval "$(/usr/local/bin/brew shellenv)"
 elif [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
