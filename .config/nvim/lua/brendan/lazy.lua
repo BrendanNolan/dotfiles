@@ -124,6 +124,19 @@ local plugins = {
     "ggandor/leap.nvim",
 
     "sindrets/diffview.nvim",
+
+    {
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = {
+            { "<leader>m", "<cmd>Outline<CR>", desc = "Toggle outline" },
+        },
+        opts = {},
+        config = function()
+            require("outline").setup({})
+        end,
+    },
 }
 
 local opts = {}
