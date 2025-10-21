@@ -138,8 +138,6 @@ cmp.setup.cmdline(':', {
     })
 })
 
-local completion_capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 -- General on_attach Stuff ---
 local do_general_on_attach_stuff = function(client, bufnr)
     disable_buffer_diagnostics_if_necessary(bufnr)
@@ -147,46 +145,6 @@ local do_general_on_attach_stuff = function(client, bufnr)
     setup_lsp_keymaps(opts)
     require('nvim-navic').attach(client, bufnr)
 end
-
--- Rust Tools --
-local rt = require("rust-tools")
-
-local codelldb_path = GetCodelldbPath()
-local liblldb_path = GetLiblldbPath()
-
-rt.setup({
-  tools = { autoSetHints = false,
-    inlay_hints = { auto = false },
-    hover_actions = { auto_focus = true }
-  },
-  server = {
-    on_attach = function(client, bufnr)
-      do_general_on_attach_stuff(client, bufnr)
-      vim.keymap.set("n", "<leader>kk", rt.hover_actions.hover_actions, { buffer = bufnr })
-      vim.keymap.set({"n", "v"}, "<leader>aa", rt.code_action_group.code_action_group, { buffer = bufnr })
-      vim.keymap.set("n", "<leader>rdb", rt.debuggables.debuggables)
-      vim.keymap.set("n", "<leader>rr", rt.runnables.runnables)
-      vim.keymap.set("n", "<leader>rsh", rt.inlay_hints.set)
-      vim.keymap.set("n", "<leader>rhh", rt.inlay_hints.unset)
-      vim.keymap.set("n", "<leader>rmu", "<cmd>RustMoveItemUp<CR>")
-      vim.keymap.set("n", "<leader>rmd", "<cmd>RustMoveItemDown<CR>")
-    end,
-    capabilities = completion_capabilities,
-    cmd = { "rustup", "run", "stable", "rust-analyzer" },
-    settings = {
-        ["rust-analyzer"] = {
-            check = {
-                command = "clippy",
-                extraArgs = { "--all", "--", "-W", "clippy::all" }
-            }
-        }
-    },
-  },
-  dap = {
-    adapter = require('rust-tools.dap').get_codelldb_adapter(
-      codelldb_path, liblldb_path)
-  },
-})
 
 -- Clangd --
 local switch_header_source = function()
