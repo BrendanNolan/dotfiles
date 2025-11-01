@@ -15,9 +15,10 @@ abbr --add cps 'gh copilot suggest'
 abbr --add cg cargo
 abbr --add re 'echo "Formatting ..." ; fmt-all ; echo "Checking ..." ; cargo check ; echo "Clippying ..." ; cargo clippy'
 ## Tmux
-abbr --add tka 'tmux kill-server'
-abbr --add tls 'tmux ls'
-abbr --add tm 'tmux'
+abbr --add ta 'tmux attach'
+abbr --add tl 'tmux ls'
+abbr --add tk 'tmux kill-server'
+abbr --add ti 'tmux_init "${HOME}/dev/fave-tmux/tmux.json"'
 ## Misc
 abbr nv 'nvim .'
 ## find hidden
