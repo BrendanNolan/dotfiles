@@ -12,7 +12,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {b
 
 local disable_buffer_diagnostics_if_necessary = function(bufnr)
 	if vim.b[bufnr].diagnostics_disabled or vim.g.diagnostics_disabled then
-		vim.diagnostic.disable(bufnr)
+		vim.diagnostic.enable(false, bufnr)
 	end
 end
 
