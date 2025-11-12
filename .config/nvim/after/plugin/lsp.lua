@@ -179,11 +179,19 @@ end
 
 vim.lsp.config.ui = { border = 'single' }
 
+-- C++
 vim.lsp.config.clangd = {
     on_attach = function(client, bufnr)
         do_general_on_attach_stuff(client, bufnr)
         local opts = {buffer = bufnr, remap = false }
         vim.keymap.set("n", "<leader>hh", switch_header_source, opts)
+    end,
+}
+
+-- Rust --
+vim.lsp.config.rust_analyzer = {
+    on_attach = function(client, bufnr)
+        do_general_on_attach_stuff(client, bufnr)
     end,
 }
 
