@@ -129,6 +129,12 @@ local plugins = {
         lazy = true,
         cmd = { "Outline", "OutlineOpen" },
     },
+
+    {
+        'mrcjkb/rustaceanvim',
+        version = '^6', -- Recommended
+        lazy = false, -- This plugin is already lazy
+    },
 }
 
 local opts = {}

@@ -189,9 +189,7 @@ vim.lsp.config.clangd = {
 
 -- Lua --
 vim.lsp.config.lua_ls = {
-    on_attach = function(client, bufnr)
-        do_general_on_attach_stuff(client, bufnr)
-    end,
+    on_attach = do_general_on_attach_stuff,
     settings = {
         Lua = {
             diagnostics = {
@@ -199,5 +197,17 @@ vim.lsp.config.lua_ls = {
             }
         }
     }
+}
+
+-- Rust --
+vim.g.rustaceanvim = {
+  server = {
+    on_attach = do_general_on_attach_stuff,
+    default_settings = {
+      ['rust-analyzer'] = {},
+    },
+  },
+  tools = {},
+  dap = {},
 }
 
