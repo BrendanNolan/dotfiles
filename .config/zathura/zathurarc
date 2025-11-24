@@ -2,6 +2,4 @@ set selection-clipboard clipboard
 set recolor "true"
 set recolor-darkcolor "#ffffff"
 set recolor-lightcolor "#000000"
-set pages-per-row 1
-set first-page-column 1:1
 set save-history false
