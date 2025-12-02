@@ -5,5 +5,5 @@ function fish_user_key_bindings
     bind \es 'tmux_go scripts'
     bind \eo 'tmux_go obsidian'
     bind \em 'tmux_go misc'
-    bind \ea tmux_go_5
+    bind \ea 'tmux_go_index 4'
 end
