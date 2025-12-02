@@ -1,0 +1,5 @@
+# \ex means Alt-X
+bind \ed 'tmux_go dotfiles'
+bind \es 'tmux_go scripts'
+bind \eo 'tmux_go obsidian'
+bind \em 'tmux_go misc'

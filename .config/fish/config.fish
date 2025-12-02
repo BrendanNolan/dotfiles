@@ -9,6 +9,7 @@ if status is-interactive
 
     source $__fish_config_dir/alias_abbr.fish
     source $__fish_config_dir/shell_integrations.fish
+    source $__fish_config_dir/key_binds.fish
 
     if not functions -q fisher
         echo "Installing fisher ..."
