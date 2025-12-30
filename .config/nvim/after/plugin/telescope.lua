@@ -71,3 +71,17 @@ vim.keymap.set(
   function() require("telescope").extensions.file_browser.file_browser(file_browser_theme) end,
   { desc = "open file_browser with the path of the current buffer" }
 )
+
+vim.keymap.set("n", "<leader>fa", function()
+  vim.cmd([[normal! "gyiw]])
+  rg_args.live_grep_args({
+    default_text = vim.fn.getreg("g"),
+  })
+end)
+
+vim.keymap.set("n", "<leader>fA", function()
+  vim.cmd([[normal! "gyiW]])
+  rg_args.live_grep_args({
+    default_text = vim.fn.getreg("g"),
+  })
+end)
