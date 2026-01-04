@@ -46,6 +46,10 @@
     
     pfo = push --force origin
     
+    # Shows Train-Track Branch Log
+    logtrain = log --graph --oneline --decorate --all
+    # Alias for logtrain
+    logt = log --graph --oneline --decorate --all
     # Pretty Log (Shows Only 5 Commits)
     pl = log --pretty=oneline --abbrev-commit -n 5
     # Preety Log Verbose (Shows Only 5 Commits)
