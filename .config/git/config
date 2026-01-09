@@ -45,6 +45,8 @@
     dnoht = diff --name-only HEAD~
     
     pfo = push --force origin
+
+    pul = pull
     
     # Shows Train-Track Branch Log
     logtrain = log --graph --oneline --decorate --all
@@ -59,6 +61,7 @@
     # Preety Log All Verbose (shows All Commits)
     plav = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>' --abbrev-commit
     
+    rebse = rebase
     rc = rebase --continue
     rhh = reset --hard HEAD
 
