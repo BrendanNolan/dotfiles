@@ -12,7 +12,8 @@ export SCRIPTS_HOME="${DEV_HOME}/scripts"
 export RUSTC_WRAPPER="${HOME}/.cargo/bin/sccache"
 export RUST_BACKTRACE=1
 export DISABLE_AUTO_TITLE=true
-export EDITOR=nvim
+export EDITOR='nvim_clean'
+export VISUAL='nvim_clean'
 export TMUX_PLUGIN_MANAGER_PATH="${XDG_CACHE_HOME}/tmux/plugins"
 
 export TOOLS_HOME="${HOME}/.local/bin"
