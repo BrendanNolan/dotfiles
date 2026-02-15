@@ -1,5 +1,6 @@
 .config/gh/hosts.yml
 .config/github-copilot/hosts.json
+.config/htop/
 .config/zsh/.zsh_history
 .config/lazygit/state.yml
 .config/fish/completions/
