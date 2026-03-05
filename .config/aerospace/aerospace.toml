@@ -57,6 +57,10 @@ run = 'move-node-to-workspace 3'
 if.app-id = 'com.pwmt.zathura'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.nvidia.devtools.Rebel'
+run = 'move-node-to-workspace 5'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
