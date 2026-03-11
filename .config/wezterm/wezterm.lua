@@ -9,6 +9,26 @@ return {
             key = 'F11',
             action = wezterm.action.ToggleFullScreen,
         },
+        {
+            key = 'n',
+            mods = 'CTRL|SHIFT',
+            action = act.SpawnTab 'CurrentPaneDomain',
+        },
+        {
+            key = 'w',
+            mods = 'CTRL|SHIFT',
+            action = act.CloseCurrentTab { confirm = true },
+        },
+        {
+            key = 'h',
+            mods = 'CTRL|SHIFT',
+            action = act.ActivateTabRelative(-1),
+        },
+        {
+            key = 'l',
+            mods = 'CTRL|SHIFT',
+            action = act.ActivateTabRelative(1),
+        },
         {  -- Make Wezterm Interpret SHIFT+3 as #
             key = '£',  -- I'd expect to have 3 here but for whatever reason that doesn't work
             mods = 'SHIFT',
