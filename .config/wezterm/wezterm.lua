@@ -39,6 +39,8 @@ return {
     font_size = 18.0,
     hide_tab_bar_if_only_one_tab = true,
     warn_about_missing_glyphs = true,
+    cursor_blink_ease_in = 'Constant',
+    cursor_blink_ease_out = 'Constant',
     window_close_confirmation = 'NeverPrompt',
     mouse_bindings = {
         {
