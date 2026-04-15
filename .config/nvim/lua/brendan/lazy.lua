@@ -115,6 +115,11 @@ local plugins = {
         'MeanderingProgrammer/markdown.nvim',
         name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
         dependencies = { 'nvim-treesitter' },
+        build = function()
+            if vim.fn.executable('latex2text') == 0 then
+                vim.fn.system({ 'pip3', 'install', 'pylatexenc' })
+            end
+        end,
         config = function()
             require('render-markdown').setup({})
         end,
