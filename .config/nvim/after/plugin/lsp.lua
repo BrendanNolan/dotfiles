@@ -28,12 +28,10 @@ local toggle_diagnostics = function(global)
 	vars.diagnostics_disabled = not vars.diagnostics_disabled
 	if vars.diagnostics_disabled then
         vim.api.nvim_echo({ { 'Disabling diagnostics…' } }, false, {})
-		cmd = 'disable'
 	else
         vim.api.nvim_echo({ { 'Enabling diagnostics…' } }, false, {})
-		cmd = 'enable'
 	end
-	vim.schedule(function() vim.diagnostic[cmd](bufnr) end)
+	vim.schedule(function() vim.diagnostic.enable(not vars.diagnostics_disabled, { bufnr = bufnr }) end)
 end
 
 local toggle_buffer_disgnostics = function()
